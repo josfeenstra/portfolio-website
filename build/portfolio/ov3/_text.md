@@ -1,20 +1,16 @@
-<!-- images to process -->
 ![Parametric Roof] (portfolio/ov3/thumb.PNG)
 ![Screenshot 1 of sample project] (portfolio/ov3/screenshot1.PNG)
 ![Screenshot 2 of sample project] (portfolio/ov3/screenshot2.PNG)
 
-<!-- title -->
 # Overdracht & Vorm 3
 
-<!-- subtitle -->
 ### Student assistant | Grasshopper tutoring | Computational design
 
-<!-- body -->
 [BK3OV3][1] Is a subject given at the TU-Delft, Faculty of Architecture, during the bachelor.
 It teaches architecture students a methodology dubbed *computational design* (also called *parametric design* or *performative design*).
 Computational design can be explained as utilizing the computational abilities of
 3D software packages not only for documentation at the end of a design process,
-but also fully **within** explorative endeavours.
+but also fully *within* explorative endeavours.
 
 Within a design process, many parameters,
 such as the height of a building or the number of windows, are not set in stone, and often completely unknown.
@@ -37,7 +33,6 @@ parametric, digital configurations. This created several small sample projects, 
 It was a great experience to work together with the some of the faculty's experts on computational design.
 They were very welcoming, I learned a great deal from them, and we had a lot of fun!
 
-<!-- links -->
 [1]: <http://toi.bk.tudelft.nl/?p=bk3ov3> "Go to bk3ov3"
 [2]: <https://www.grasshopper3d.com/> "Grasshopper"
 [3]: <"http://josfeenstra.nl/#Sfered"> "Sfered"

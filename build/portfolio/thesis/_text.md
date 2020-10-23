@@ -1,13 +1,8 @@
-<!-- images to process -->
 
 
-<!-- title -->
 # Thesis
 
-<!-- subtitle -->
-### Geomatics | CityJSON | TODO
+### Geomatics | ??? | TODO
 
-<!-- body -->
-TODO
-
-<!-- links -->
+I am yet undecided what my thesis will be. Please contact me if you have got a
+good proposal!
