@@ -1,0 +1,273 @@
+/* META */
+:root {
+    --main-bg-color: #1f1f1f;
+    --secondary-bg-color: #2f2f2f;
+    --main-text-color: white;
+    --main-text-color-dark: rgb(214, 214, 214);
+    --secondary-inactive-color: #cacaca;
+    --main-inactive-color: #8a8a8a;
+    --main-active-color: orangered;
+    --main-active-color-light: rgb(255, 174, 128);
+    --main-active-color-sec: rgb(194, 52, 0);
+    --main-transition-time: 0.25s;
+    --secondary-transition-time: 0.50s;
+}
+
+/* MASTER STYLES */
+/* clean standard settings */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--main-text-color-dark);
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--main-active-color-sec);
+    text-decoration: none;  
+}
+
+a:hover {
+    color: var(--main-active-color);
+}
+
+ul {
+    list-style:none;
+}
+
+p {
+    white-space: normal;
+    margin-bottom: 16px;
+}
+
+ol {
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+strong {
+    color: var(--main-text-color);
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    margin: 0px;
+    font-size:100%;
+    max-width: 1200px;
+    align-items: center;
+    margin: auto;
+}
+
+h1 {
+    font-size: 6rem;
+    margin-bottom: 32px;
+}
+
+h2 {
+    margin-bottom: 32px;
+}
+
+h3 {
+    margin-bottom: 32px;
+}
+
+button {
+    position: inherit;
+    justify-self: left;
+    transform: translateY(-80px);
+    text-transform: uppercase;
+}
+
+*::selection {
+    background: var(--main-active-color);
+    color: white;
+}
+
+
+
+/* Main Pieces */
+
+.app {   
+    min-height: fit-content;
+    /* background-image: url("../images/about.png"); */
+    background-position: center;
+    background-size: 80px 80px;
+}
+
+nav {
+    /* flexbox makes leftside / rightside things possible */
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin-top: 48px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 112px;
+    font-size: 1.2em;
+}
+
+canvas {
+    z-index: -1;
+    position:absolute;
+    top:0; 
+    left:0;
+}
+
+/* Nav Elements */
+
+.left-side {
+    display: flex;
+}
+
+
+.right-side {
+    display: flex;
+}
+
+/* way to traverse a tree, loop as it were */
+.nav > .right-side > div {
+    margin-left: 4px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav-link,
+.socials-link,
+.copyright,
+.brand {
+    /* background-color: black; */
+    /* height: 24px; */
+    border-bottom: 1px solid var(--main-inactive-color);
+    border-bottom: 1px solid var(--secondary-inactive-color);
+    /* we want to animate border bottom */
+    transition: var(--main-transition-time);
+    transition: border-bottom var(--main-transition-time);  
+}
+
+.nav-link a, 
+.socials-link a,
+.brand a,
+.copyright a {
+    margin: auto;
+    padding: 20px;
+    color: var(--main-inactive-color);
+    transition: var(--main-transition-time);
+    /* we want to animate color */
+    transition: color var(--main-transition-time);
+}
+
+/* pseudo states */
+.nav-link:hover,
+.socials-link:hover {
+    border-bottom: 1px solid var(--main-active-color);
+}
+
+/* pseudo states */
+.nav-link a:hover,
+.socials-link:hover {
+    color: var(--main-text-color);
+}
+
+.brand a {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.brand a:hover {
+    color: var(--main-text-color);
+}
+
+.nav-highlight {
+    border-bottom: 2px solid var(--main-active-color);
+}
+
+
+
+/* Footer */
+
+footer {
+    padding-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.footer-links {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    justify-items: center;
+    align-content: space-between;
+    align-items: center;
+}
+
+.socials-link {
+    width: 100%;
+    align-content: center;
+    /* padding: 40px; */
+    color: var(--main-inactive-color);
+    text-decoration: none;
+    transition: var(--main-transition-time);;
+}
+
+.active-link a.active {
+    background-color: var(--main-active-color);
+}
+
+.copyright {
+    padding-top: 16px;
+    text-align: center;
+}
+
+/* Page */
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: right;
+}
+
+.col1 {
+    width: 100%;
+    max-width: max-content;
+    padding: 32px;
+    display: grid;
+    justify-items: right;
+}
+
+.col1 > img {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.col2 {
+    width: 100%;
+    padding: 32px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+}
+
+/* Other */
+
+/* .background {
+
+} */

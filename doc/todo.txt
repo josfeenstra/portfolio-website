@@ -1,0 +1,4 @@
+# todo 
+- image preview
+- more dynamic portfolio pages
+

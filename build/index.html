@@ -1,0 +1,55 @@
+<!-- Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jos Feenstra</title>
+
+    <meta name="description" content="Hi, thank you for checking out my portfollio.">
+    <meta name="keywords" content="portfolio, developer, Jos, Feenstra, grasshopper, geomatics">
+    <meta name="author" content="Jos Feenstra"> 
+    <style>
+        /* this needs to be included, so that it always runs no matter what */
+    * {
+        animation: show 500ms;
+    }
+
+    /* Keyframes */
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleY(0);
+        height: 0%;
+        opacity: 0;
+    }
+}
+
+    </style>
+    <link href="./styles/index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="app">  
+    <header></header>
+    <nav class="nav"></nav>
+    <article></article>
+    <footer></footer>
+    <script type="module" src="app.js"></script>
+    <canvas></canvas>
+</body>    
+</html>
+
+
+

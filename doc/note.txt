@@ -1,0 +1,70 @@
+### VISUAL STUDIO CODE
+
+Ctrl + J : terminal
+Ctrl + B : Side bar 
+
+--------------------------------------------
+### TODO 
+
+BASICS 
+
+https://www.youtube.com/watch?v=5bMdjkfvONE&t=5222s
+https://www.youtube.com/watch?v=j_Xa7Kn59Es
+
+______________________________________________________
+
+
+HOME PAGE MAGIC
+
+- Three.js 
+- vanilla : https://www.youtube.com/watch?v=d620nV6bp0A
+
+
+
+
+PORTFOLIO
+
+- find something that 
+- maybe this : https://www.youtube.com/watch?v=UzvyuYEAU8o&list=PLlRapu2ErjJ-2cWerNuZEv5kkCFwK0won&index=2
+- maybe this : https://www.youtube.com/watch?v=UKjvwAqTrLA
+
+- Particles for Home : 
+- https://www.youtube.com/watch?v=d620nV6bp0A
+
+--------------------------------------------
+### DESIGN 
+
+- Home
+  L Work 
+    - Filters
+    - Individual pages 
+  L About 
+    - My name is Jos Feenstra, 24 Years old, and currently a student Geomatics at the TU Delft
+    - Picture
+
+  L Contact
+    - 
+    - 
+    - 
+
+--------------------------------------------
+### NOTES
+
+- general javascript goodyness : https://www.youtube.com/watch?v=qugY8axtvWY
+- tutorials for vanilla javascript elements : https://www.youtube.com/c/Frankslaboratory/videos
+
+
+
+
+
+al deze fucking afkortingen: 
+SSH : Secure Shell Connection
+FTP : File Transfer Protocol
+SFTP : Save File Transfer Protocol (i guess)
+
+
+
+# good packages 
+lit-html
+https://www.adam-bien.com/
+
