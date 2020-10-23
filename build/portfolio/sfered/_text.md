@@ -1,7 +1,6 @@
 <!-- images to process -->
 ![Prints] (portfolio/sfered/thumb.png)
 ![Prints] (portfolio/sfered/voronoi.png)
-
 ![Pupil Finder] (portfolio/sfered/pupil-finder.png)
 ![Prints] (portfolio/sfered/sport-fit.gif)
 ![Prints] (portfolio/sfered/hinge-design.gif)

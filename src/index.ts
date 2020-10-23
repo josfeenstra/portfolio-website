@@ -87,8 +87,8 @@ function LoadPortfolioItems(
             name: name,
             hash: "#"+name,
             view: View,
-            page: "portfolio/" + name + "/" + textname,
-            thumb: "portfolio/" + name + "/" + thumbname,
+            page: "./portfolio/" + name.toLowerCase() + "/" + textname,
+            thumb: "./portfolio/" + name.toLowerCase() + "/" + thumbname,
             year: year,
             category: category
         }
