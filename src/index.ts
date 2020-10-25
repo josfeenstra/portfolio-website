@@ -36,7 +36,7 @@ const ROUTES : Route[] =
     },
     { 
         type: 1,
-        name: "About", 
+        name: "About Me", 
         hash: "#about", 
         view: View,
         page: "nav/About.md"
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () =>
     ROUTES.push(...LoadPortfolioItems(ENTRIES, "_text.md", "thumb.png"));
     console.log(ROUTES);
     App.Init(ROUTES, location.hash);
-    Canvas.init('canvas');
+    // Canvas.init('canvas');
 })
 
 

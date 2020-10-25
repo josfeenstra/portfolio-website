@@ -59,6 +59,14 @@ export default class Render
         context.appendChild(h1);
     }
 
+    static AddH2(context : Element, message : string, className : string="") {
+        let h2 = document.createElement("h2");
+        h2.innerText = message;
+        h2.className = className;
+        context.appendChild(h2);
+    }
+
+
     static AddElement(context : Element, element : string, className : string = "") {
         let el = document.createElement(element)
         el.className = className;

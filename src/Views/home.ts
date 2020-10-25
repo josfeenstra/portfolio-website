@@ -28,6 +28,7 @@ export default class Home extends View
         
         let head = Render.AddDiv(ts, "title-header")
         Render.AddH1(head, "Jos Feenstra");
+        Render.AddH2(head, "Master Student Geomatics @ TU Delft &\n Computational Geometry Enthusiast");
         // mabye subheader text? 
   
         let links = Render.AddDiv(ts, "title-navlinks");
