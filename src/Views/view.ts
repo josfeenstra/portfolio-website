@@ -51,7 +51,14 @@ export default class View
         let columns = Render.AddDiv(context, "columns");
         let col1 = Render.AddDiv(columns, "col1");
         let col2 = Render.AddDiv(columns, "col2");
-
+        // console.log(document.body.clientWidth);
+        // if (document.body.clientWidth < 600)
+        // {
+        //     // reverse
+        //     let temp = col1; 
+        //     col1 = col2;
+        //     col2 = temp;
+        // }
         col2.innerHTML = html;
 
         extractNodes.forEach(nodename => {

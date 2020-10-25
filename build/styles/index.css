@@ -246,7 +246,7 @@ footer {
 
 .col1 {
     width: 100%;
-    max-width: max-content;
+    /* max-width: max-content; */
     padding: 32px;
     display: grid;
     justify-items: right;
@@ -283,6 +283,12 @@ footer {
     .columns {
         display: grid;
         grid-template-columns: 1fr;
-        justify-items: right;
+    }
+
+    .col1 {
+        order: 2;
+    }
+    .col2 {
+        order: 1;
     }
 }
