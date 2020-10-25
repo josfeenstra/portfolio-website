@@ -14,6 +14,7 @@ While I'm still far from an expert on these subjects, I am however, proud to hav
 
 This website is set up by using solely HTML, CSS, and Typescript. does not use
 any framework or external libraries, aside from [showdown][1], an excellent, lightweight markdown parser.
-I have put the website online at
+The website, along with this framework, can be found [here][2].
 
-[1]: (https://github.com/showdownjs/showdown)
+[1]: <https://github.com/showdownjs/showdown>
+[2]: <https://github.com/josfeenstra/portfolio-website>

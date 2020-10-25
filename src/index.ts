@@ -18,7 +18,7 @@ const ROUTES : Route[] =
     { 
         type: 0,
         name: "Home", 
-        hash: "#Home", 
+        hash: "#home", 
         view: Home
     },
     // { 
@@ -31,24 +31,24 @@ const ROUTES : Route[] =
     { 
         type: 1,
         name: "Works", 
-        hash: "#Works", 
+        hash: "#works", 
         view: Work 
     },
     { 
         type: 1,
         name: "About", 
-        hash: "#About", 
+        hash: "#about", 
         view: View,
         page: "nav/About.md"
     },
 ]; 
 
-const ENTRIES : string[] = [
-
+const ENTRIES : string[] = 
+[
     "Sfered | 2018-2020 | Job",
     "OV3 | 2019 | Job",
 
-    "Thesis | 2021-2022 | Study",
+    // "Thesis | 2021-2022 | Study",
     "Synthesis | 2020 | Study",
     "Geomatics | 2019 | Study",
     "Minor | 2017-2018 | Study",
@@ -82,13 +82,14 @@ function LoadPortfolioItems(
         let name = strings[0];
         let year = strings[1];
         let category = strings[2];
+        let namelower = name.toLowerCase();
         return {
             type: 2,
             name: name,
-            hash: "#"+name,
+            hash: "#"+namelower,
             view: View,
-            page: "./portfolio/" + name.toLowerCase() + "/" + textname,
-            thumb: "./portfolio/" + name.toLowerCase() + "/" + thumbname,
+            page: "./portfolio/" + namelower + "/" + textname,
+            thumb: "./portfolio/" + namelower + "/" + thumbname,
             year: year,
             category: category
         }

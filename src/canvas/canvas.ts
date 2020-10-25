@@ -11,27 +11,30 @@ export default class Canvas {
     {     
         Canvas.selector = canvasQuerySelector;
         let canvas = this.get();
-        window.addEventListener("resize", Canvas.resizeCanvas, false);
-        this.resizeCanvas();
-        Canvas.Redraw();
+        window.addEventListener("resize", Canvas.onResizeCanvas, false);
+        this.onResizeCanvas();
+        Canvas.Redraw(canvas);
     }
 
-    public static Redraw()
+    public static Redraw(canvas: HTMLCanvasElement)
     {
-        Canvas.drawGrid(Canvas.get(), 16, 5);
+        Canvas.drawGrid(canvas, 16, 5);
+        Canvas.drawWip(canvas);
     }
 
-    static get() : HTMLCanvasElement
+    private static get() : HTMLCanvasElement
     {
         return document.querySelector(Canvas.selector)! as HTMLCanvasElement;
     }
 
-    static resizeCanvas()
+    public static onResizeCanvas()
     {
         let canvas = Canvas.get();
         canvas.width = window.innerWidth;
-        canvas.height = Math.max(window.innerHeight, document.querySelector(".app")!.scrollHeight);
-        Canvas.drawGrid(canvas, 16, 5);
+        canvas.height = window.innerHeight + document.querySelector(".app")!.scrollHeight;
+        // canvas.height = Math.max(window.innerHeight, document.querySelector(".app")!.scrollHeight);
+        Canvas.Redraw(canvas);
+        
     }
 
     static drawWip(canvas : HTMLCanvasElement)

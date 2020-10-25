@@ -3,6 +3,7 @@
 import Render from "./render";
 import { Route, RouteType } from "./app-helpers";
 import CD from "../utils/constant-data";
+import Canvas from "../canvas/canvas";
 
 // single page app singleton
 export default class App {
@@ -96,6 +97,7 @@ export default class App {
             App.view.onUnload();
         App.view = new this.route.view(App.route);
         App.view.onLoad();
+        Canvas.onResizeCanvas();
     }
 
     static Redirect(path : string) 

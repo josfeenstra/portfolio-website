@@ -6,13 +6,10 @@
 ![Image] (portfolio/architecture/shot5.png)
 ![Image] (portfolio/architecture/shot6.png)
 
-<!-- title -->
 # Bachelor of Architecture
 
-<!-- subtitle -->
 ### Bouwkunde | Architecture student | TU Delft University of Technology
 
-<!-- body -->
 While I have completely deviated from the path of architect, I cannot understate
 how much this education has shaped my thinking about any type of creative
 production, including coding. As an architecture student, I have not only

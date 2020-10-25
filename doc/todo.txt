@@ -1,4 +1,7 @@
 # todo 
+- finish content
+- mobile-proof
+- opening page
 - image preview
 - more dynamic portfolio pages
 
