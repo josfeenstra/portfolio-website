@@ -18,4 +18,4 @@ During my three years as developer and parametric modeller at Sfered, I have cre
 4. **The Fit Engine:** In order to make a pair of glasses fit its user confortably, several facial features need to be found with high accuracy. I have derived feature recognition tools, inspired by methods used within the field of Geomatics.
 
 [1]: <http://sfered.nl/> "Go to Sfered."
-[2]: <http://josfeenstra.nl/#Gazelle> "Go to Gazelle"
+[2]: <http://josfeenstra.nl/#gazelle> "Go to Gazelle"

@@ -1,4 +1,4 @@
-![Parametric Roof] (portfolio/ov3/thumb.png)
+![Something] (portfolio/ov3/thumb.png)
 ![Screenshot 1 of sample project] (portfolio/ov3/screenshot1.png)
 ![Screenshot 2 of sample project] (portfolio/ov3/screenshot2.png)
 

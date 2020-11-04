@@ -1,9 +1,9 @@
-# todo 
-- finish content
-- mobile-proof
-- opening page
-- image preview
-- more dynamic portfolio pages
+# TODO 
+- finish content               - DONE 
+- mobile-proof                 - 
+- opening page                 - 
+- image preview                - 
+- more dynamic portfolio pages - 
 
 # CONTENT
 - Landing page        - DONE
@@ -19,9 +19,7 @@
 - Chessnuts           - DONE
 - Groover             - DONE
 
-
-
-# dynamic portolio pages: 
+# DYNAMIC PORTFOLIO PAGES: 
 - grid view as image viewer
   - pop ups
   - top image : go back

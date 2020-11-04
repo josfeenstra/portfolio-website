@@ -1,5 +1,5 @@
-![Image1] (portfolio\minor\image1.PNG)
-![Image2] (portfolio\minor\thumb.PNG)
+![Image1] (portfolio\minor\image1.png)
+![Image2] (portfolio\minor\thumb.png)
 ![Image3] (portfolio\minor\game3.png)
 
 # Minor Programming

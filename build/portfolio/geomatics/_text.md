@@ -1,4 +1,4 @@
-![Water Propagation] (portfolio/geomatics/thumb.PNG "runoff modelling")
+![Water Propagation] (portfolio/geomatics/thumb.png "runoff modelling")
 ![Points] (portfolio/geomatics/points.PNG "a more efficient TIN of a point cloud")
 ![Normal Flipping] (portfolio/geomatics/normal-flipping.PNG "normal-flipping")
 ![Voxelization] (portfolio/geomatics/voxelization.PNG "voxelization")
