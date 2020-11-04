@@ -5,11 +5,8 @@
 - image preview
 - more dynamic portfolio pages
 
-
-
-
 # CONTENT
-- Landing page 
+- Landing page SEMI DONE
 
 - Works 
   - Sfered - DONE 

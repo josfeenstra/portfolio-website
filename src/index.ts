@@ -23,10 +23,10 @@ const ROUTES : Route[] =
     },
     // { 
     //     type: 1,
-    //     name: "Highlight", 
-    //     hash: "#Highlight", 
+    //     name: "Demo", 
+    //     hash: "#Demo", 
     //     view: View,
-    //     page: "nav/Highlight.md" 
+    //     page: "nav/Demo.md" 
     // },
     { 
         type: 1,
