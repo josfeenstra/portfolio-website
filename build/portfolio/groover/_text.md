@@ -1,26 +1,25 @@
-
+![Image] (portfolio/groover/thumb.png)
+![Image] (portfolio/groover/commissies.jpg)
 
 # D.S.J.V. Groover
 
 ### Student Jazz Society | Commissions | Social
 
 My time as a student wouldn't have been complete without my favourite place in
-All of delft, the [Delft Student Jazz Society called Groover][1].
+All of delft, the [Delft Student Jazz Society called Groover][1]. 
 
-(...)
+D.S.J.V. Groover is a very interesting Student Society for several reasons. Unlike how many other student societies are hold together very general principles (like a shared appreciation for alcoholic beverages), Groover has a very specific flag to rally under: creating and appreciating jazz music. 
+Groover has about 350 members. Our core activity is organising jams, and having fun while others jam, during small scale 'borrels'. besides that, groover organises events like band speeddate nights, random activities like diners and vacations, and even a fully fletched festival day which usually attracts about 1400 visitors, called Just Jazz. 
 
-In order to give back to the society that gave me so much, I participated in
-several commissions, tasked with various things. In my first year there, 2016,
+One might think that groover is filled with convervatory students studying jazz, but this is the fun part: We are mostly "Jazz hobbyist": TU-Delft students from many different studies, that pratice an instrument on the side. To me this makes Groovers' members very intersting people who are always able to tell a very unique story. They are also just amazing company in general. Music can form strong bonds, and I can testify, as I discovered many close friends at Groover.
 
-(...)
-
-Right now I work as part of the Lustrum Book commission, tasked with capturing
-Groover's best pictures, memories and events within a 300-400 page book, which
-will be released in coming May.
-
-(...)
-
-Vo Jazz.
+In order to give back to the society that gave me so much, I participated in several commissions, tasked 
+with various things. In my first year there, 2016, we organised the introduction 
+week events during the so-called OWee. Later I spend two years designing posters 
+and other artworks as part of the Illustration Commission. Right now I work as part
+ of the Lustrum Book Commission, tasked with capturing Groover's best events, 
+ memories and pictures of the last 5 years. These will be put in a 350 page book, 
+ which will be released in September 2021.
 
 
-[1]: (https://grooverjazz.nl/)
+[1]: <http://grooverjazz.nl>

@@ -5,8 +5,6 @@
 - image preview
 - more dynamic portfolio pages
 
-
-
 # CONTENT
 - Landing page        - DONE
 - About Me            - DONE
@@ -15,11 +13,11 @@
 - OV3                 - DONE 
 - Synthesis           - DONE
 - Geomatics           - DONE
-- Minor               - ...
-- Architecture        - ...
+- Minor               - DONE 15:37
+- Architecture        - DONE 16:25
 - Website             - DONE 
 - Chessnuts           - DONE
-- Groover             - ...
+- Groover             - DONE
 
 
 
