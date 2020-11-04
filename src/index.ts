@@ -21,13 +21,13 @@ const ROUTES : Route[] =
         hash: "#home", 
         view: Home
     },
-    // { 
-    //     type: 1,
-    //     name: "Demo", 
-    //     hash: "#Demo", 
-    //     view: View,
-    //     page: "nav/Demo.md" 
-    // },
+    { 
+        type: 1,
+        name: "Demo", 
+        hash: "#Demo", 
+        view: View,
+        page: "nav/Demo.md" 
+    },
     { 
         type: 1,
         name: "Works", 
@@ -46,6 +46,7 @@ const ROUTES : Route[] =
 const ENTRIES : string[] = 
 [
     "Sfered | 2018-2020 | Job",
+    "Gazelle | 2018-2020 | Job",
     "OV3 | 2019 | Job",
 
     // "Thesis | 2021-2022 | Study",

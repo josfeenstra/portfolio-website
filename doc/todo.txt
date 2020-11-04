@@ -5,11 +5,25 @@
 - image preview
 - more dynamic portfolio pages
 
-# CONTENT
-- Landing page SEMI DONE
 
-- Works 
-  - Sfered - DONE 
-  - OV3 - DONE 
-  - Synthesis - DONE 
-  - 
+
+# CONTENT
+- Landing page        - DONE
+- About Me            - ...
+- Sfered              - DONE 
+- Gazelle             - DONE
+- OV3                 - DONE 
+- Synthesis           - ... 
+- Geomatics           - ...
+- Minor               - ...
+- Architecture        - ...
+- Website             - DONE 
+- Chessnuts           - DONE
+- Groover             - ...
+
+
+
+# dynamic portolio pages: 
+- grid view as image viewer
+  - pop ups
+  - top image : go back
