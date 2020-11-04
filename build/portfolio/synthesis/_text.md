@@ -15,6 +15,6 @@ Me and my group built a pilot project for the Rotterdam Rijnmond Safety region, 
 
 ... 
 
-video's can be found here..
+video's git can be found here..
 
 ..
