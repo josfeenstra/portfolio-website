@@ -14,6 +14,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Website"
+		"liveServer.settings.multiRootWorkspaceName": "Website",
+		"explorer.autoReveal": false
 	}
 }
