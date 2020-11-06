@@ -1,5 +1,5 @@
 # TODO 
-- finish content               - DONE 
+- finish content               - DONE !!
 - mobile-proof                 - 
 - opening page                 - 
 - image preview                - 
@@ -17,7 +17,9 @@
 - Architecture        - DONE 16:25
 - Website             - DONE 
 - Chessnuts           - DONE
-- Groover             - DONE
+- Groover             - DONE 17:22
+
+- Some post editing   - DONE 18:29
 
 # DYNAMIC PORTFOLIO PAGES: 
 - grid view as image viewer

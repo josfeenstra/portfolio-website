@@ -24,9 +24,8 @@ const ROUTES : Route[] =
     { 
         type: 1,
         name: "Demo", 
-        hash: "#Demo", 
+        hash: "https://josfeenstra.nl/demo", 
         view: View,
-        page: "nav/Demo.md" 
     },
     { 
         type: 1,
