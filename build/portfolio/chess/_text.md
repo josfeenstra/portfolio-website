@@ -1,5 +1,5 @@
 <!-- images to process -->
-![Chessnuts] (portfolio/chess/thumb.PNG)
+![Chessnuts] (portfolio/chess/thumb.png)
 
 <!-- title -->
 # Chessnuts
