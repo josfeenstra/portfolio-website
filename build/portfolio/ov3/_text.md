@@ -10,7 +10,7 @@
 It teaches architecture students a methodology dubbed *computational design* (also called *parametric design* or *performative design*).
 Computational design can be explained as utilizing the computational abilities of
 3D software packages not only for documentation at the end of a design process,
-but also fully *within* explorative endeavours.
+but also fully *within* exploitative endeavors.
 
 Within a design process, many parameters,
 such as the height of a building or the number of windows, are not set in stone, and often completely unknown.
@@ -20,7 +20,7 @@ such as solar potential, constructive robustness or the fastest fire escape plan
 and by qualitative means, such as navigability, aesthetic quality, and symbolic
 representation (is this school properly playful? is this office professional enough? etc.).
 
-By building 3D models that can properly accommodate fluidity and 'unknowingness',
+By building 3D models that can properly accommodate fluidity and 'unknowns',
 the designer can start a whole new dialogue with his or her digital aid.
 A vast range of different configurations can be calculated and explored to find the best possible combination of parameters,
 and software such as [Grasshopper 3D][2] can be used to judge quantifiable properties of these iterations.

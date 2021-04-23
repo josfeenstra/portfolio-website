@@ -24,7 +24,7 @@ const ROUTES : Route[] =
     { 
         type: 1,
         name: "Demo", 
-        hash: "https://josfeenstra.nl/demo", 
+        hash: "https://josfeenstra.nl/demo/geon", 
         view: View,
     },
     { 
@@ -44,7 +44,7 @@ const ROUTES : Route[] =
 
 const ENTRIES : string[] = 
 [
-    "Sfered | 2018-2020 | Job",
+    "Sfered | 2018-2021 | Job",
     "Gazelle | 2018-2020 | Job",
     "OV3 | 2019 | Job",
 

@@ -7,7 +7,7 @@
 ### Bachelor Minor | University of Amsterdam
 
 The TU-Delft, like many other universities, grants its students a moment during the curriculum of its bachelors, 
-in which students can diverge, called the Minor. One semester long, a student can basicly choose to study whatever they so desire. 
+in which students can diverge, called the Minor. One semester long, a student can basically choose to study whatever they so desire. 
 This could have a strong connection to their main bachelor, but it could also be something completely different. 
 I chose for the 'Minor Programming', given at the University of Amsterdam. It attracted students from many different fields, so I shared my classes with students studying math, biology, and even some studying political science and sociology. 
 
