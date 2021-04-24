@@ -68,6 +68,12 @@ document.addEventListener("DOMContentLoaded", () =>
     console.log(ROUTES);
     App.Init(ROUTES, location.hash);
     // Canvas.init('canvas');
+    
+    // hide canvas by default
+    let canvas = document.getElementById("canvas") as HTMLCanvasElement;
+    if (canvas) {
+        canvas.setAttribute("data-filled", "0");
+    }
 })
 
 

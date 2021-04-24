@@ -21,6 +21,8 @@ export default class Home extends View
 
         this.loadArticle(article);
         article.dataset.gotomain
+
+        // fade in of the sphere
         let canvas = document.getElementById("canvas") as HTMLCanvasElement;
         if (canvas) {
             canvas.setAttribute("data-filled", "1");

@@ -82,5 +82,11 @@ export default class View
     onUnload() 
     {
         App.ClearFooter();
+
+        // hide canvas
+        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
+        if (canvas) {
+            canvas.setAttribute("data-filled", "0");
+        }
     }
 }
