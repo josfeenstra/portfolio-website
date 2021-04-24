@@ -103,12 +103,12 @@ button {
 
 /* Main Pieces */
 
-.app {   
+/* .app {   
     min-height: fit-content;
     background-image: url("../images/background.png");
     background-position: center;
     background-size: 80px 80px;
-}
+} */
 
 nav {
     /* flexbox makes leftside / rightside things possible */
@@ -267,13 +267,13 @@ footer {
 
 /* Other */
 
-.background {
+/* .background {
     width: 100%;
     height: 100%;
     background-image: url(../images/background.png);
     background-position: center;
     background-size: 80px 80px;
-}
+} */
 
 
 /* responsiveness : change things for mobile users */

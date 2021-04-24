@@ -1,8 +1,6 @@
 # Thank you for visiting!
 
-![My Face](../images/jos.jpg "My Face")
-
-My name is Jos Feenstra, a second year Msc Geomatics Student at the TU Delft.
+My name is Jos Feenstra, second year Msc Geomatics Student at the TU Delft.
 
 I enjoy tackling problems which necessitate a wholistic approach. I have discovered that I can mean a lot in situations where both the mindset of a programmer & designer are needed within one skull. I get my strength from fascination in abstract and unorthodox ideas, mixing them, experimenting with them, and then turning those vague concepts into concrete, tangible products which really mean something. This mixing of ideas has lead me to do things like using geomatics-related algorithms in order to create [art][7], using game-engines to build [geomatics][5] applications, and using AI to help me design [posters][6]. 
 

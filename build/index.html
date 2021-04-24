@@ -5,9 +5,19 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jos Feenstra</title>
-    <meta name="description" content="Hi, thank you for checking out my portfollio.">
+    <meta name="description" content="Hi, thank you for checking out my portfolio.">
     <meta name="keywords" content="portfolio, developer, Jos, Feenstra, grasshopper, geomatics, TU Delft">
     <meta name="author" content="Jos Feenstra"> 
+
+    <script type="module" src="app.js"></script>
+    <script src="./landing/index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+    <!-- <link rel="stylesheet" href=".\landing\css\main.css">
+    <link rel="stylesheet" href=".\landing\css\dropdown.css">
+    <link rel="stylesheet" href=".\landing\css\checkbox.css"> -->
+
     <style>
         /* this needs to be included, so that it always runs no matter what */
     * {
@@ -45,8 +55,8 @@
     <nav class="nav"></nav>
     <article></article>
     <footer></footer>
-    <script type="module" src="app.js"></script>
-    <canvas></canvas>
+    <canvas id="canvas" tabindex="0" data-goto="main" data-filled="1" ></canvas>
+    <div id="interface"></div>
 </body>    
 </html>
 

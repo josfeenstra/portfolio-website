@@ -7,8 +7,8 @@ import View from "./Views/view";
 
 import {Route} from "./system/app-helpers";
 import App from "./system/app";
-import Canvas from "./canvas/canvas";
-import CD from "./utils/constant-data";
+// import Canvas from "./canvas/canvas";
+// import CD from "./utils/constant-data";
 
 // this is a setup of the entire website. 
 // All possible loadable pages are represented by this table

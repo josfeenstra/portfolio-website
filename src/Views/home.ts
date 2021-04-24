@@ -20,6 +20,11 @@ export default class Home extends View
         App.ClearFooter();
 
         this.loadArticle(article);
+        article.dataset.gotomain
+        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
+        if (canvas) {
+            canvas.setAttribute("data-filled", "1");
+        }
     }
 
     loadArticle(context: HTMLElement) {
@@ -28,7 +33,7 @@ export default class Home extends View
         
         let head = Render.AddDiv(ts, "title-header")
         Render.AddH1(head, "Jos Feenstra");
-        Render.AddH2(head, "Master Student Geomatics @ TU Delft &\n Computational Geometry Enthusiast");
+        Render.AddH2(head, "Master Student Geomatics @ TU Delft");
         // mabye subheader text? 
   
         let links = Render.AddDiv(ts, "title-navlinks");
@@ -40,5 +45,11 @@ export default class Home extends View
     {
         console.log("unloading home...");
         Render.RemoveCss("./styles/home.css");
+
+        // hide canvas
+        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
+        if (canvas) {
+            canvas.setAttribute("data-filled", "0");
+        }
     }
 }

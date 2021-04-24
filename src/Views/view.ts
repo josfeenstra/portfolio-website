@@ -25,6 +25,12 @@ export default class View
         this.loadArticle(article);
         this.afterLoadArticle(article);
         App.RenderFooter();
+
+        // fade in of the sphere
+        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
+        if (canvas && this.route.hash =="#about") {
+            canvas.setAttribute("data-filled", "1");
+        }
     }
 
     loadArticle(context: HTMLElement) 
