@@ -67,13 +67,6 @@ document.addEventListener("DOMContentLoaded", () =>
     ROUTES.push(...LoadPortfolioItems(ENTRIES, "_text.md", "thumb.png"));
     console.log(ROUTES);
     App.Init(ROUTES, location.hash);
-    // Canvas.init('canvas');
-    
-    // hide canvas by default
-    let canvas = document.getElementById("canvas") as HTMLCanvasElement;
-    if (canvas) {
-        canvas.setAttribute("data-filled", "0");
-    }
 })
 
 

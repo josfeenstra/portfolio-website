@@ -95,4 +95,14 @@ export default class Render
             }
         });
     }
+
+    static TrySetElementAttributeById<T extends HTMLElement>(id: string, attribute: string, value: string) : Boolean {
+        // hide canvas
+        let element = document.getElementById(id) as T;
+        if (element) {
+            element.setAttribute(attribute, value);
+            return true;
+        }
+        return false
+    }
 }

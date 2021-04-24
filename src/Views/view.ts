@@ -25,12 +25,6 @@ export default class View
         this.loadArticle(article);
         this.afterLoadArticle(article);
         App.RenderFooter();
-
-        // fade in of the sphere
-        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
-        if (canvas && this.route.hash =="#about") {
-            canvas.setAttribute("data-filled", "1");
-        }
     }
 
     loadArticle(context: HTMLElement) 
@@ -43,6 +37,16 @@ export default class View
         .then(data => {
             this.initMarkdownPage(context, data, ["button", "img"]);
         });
+
+        // // fade in of the sphere
+        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
+        if (this.route.hash =="#about") { 
+            Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "side");
+        } else if (this.route.hash =="#website") {
+            Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "inside");
+        } else {
+            Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "low-side");
+        }
     }
 
     // fill the entire context with whatever we find in markdown
@@ -82,11 +86,5 @@ export default class View
     onUnload() 
     {
         App.ClearFooter();
-
-        // hide canvas
-        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
-        if (canvas) {
-            canvas.setAttribute("data-filled", "0");
-        }
     }
 }

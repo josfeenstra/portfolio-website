@@ -15,6 +15,9 @@ export default class Work extends View
 
     loadArticle(context: HTMLElement) 
     {
+
+        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "bottom");
+        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
         const grid = Render.AddDiv(context, "grid");
 
         App.GetRoutes(RouteType.portfolio).forEach(item => 
@@ -39,10 +42,10 @@ export default class Work extends View
     addListeners(item : HTMLElement, hash:string)
     {
         item.onmousedown = function() {
-            item.style.transform = 'scale(1.00)';
+            // item.style.transform = 'scale(1.00)';
         }
         item.onmouseup = function() {
-            item.style.transform = '';
+            // item.style.transform = '';
             App.TryGo(hash);
         }   
     }

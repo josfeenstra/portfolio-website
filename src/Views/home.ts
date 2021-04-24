@@ -23,10 +23,8 @@ export default class Home extends View
         article.dataset.gotomain
 
         // fade in of the sphere
-        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
-        if (canvas) {
-            canvas.setAttribute("data-filled", "1");
-        }
+        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "overview");
+        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
     }
 
     loadArticle(context: HTMLElement) {
@@ -47,11 +45,5 @@ export default class Home extends View
     {
         console.log("unloading home...");
         Render.RemoveCss("./styles/home.css");
-
-        // hide canvas
-        let canvas = document.getElementById("canvas") as HTMLCanvasElement;
-        if (canvas) {
-            canvas.setAttribute("data-filled", "0");
-        }
     }
 }
