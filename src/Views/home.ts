@@ -1,11 +1,11 @@
 // Author : Jos Feenstra
 
-import App from "../system/app";
-import View from "./view";
-import {Route} from "../system/app-helpers";
-import Render from "../system/render";
+import { App } from "../system/app";
+import { Route } from "../system/app-helpers";
+import { Dom } from "../system/dom";
+import { View } from "./view";
 
-export default class Home extends View 
+export class Home extends View 
 {
     constructor(route: Route) {
         super(route);
@@ -13,7 +13,7 @@ export default class Home extends View
 
     async onLoad() {
         // console.log("loading home...");
-        Render.AddCss("./styles/home.css");
+        Dom.AddCss("./styles/home.css");
 
         App.ClearNav();
         let article = await App.ClearArticle();  
@@ -23,20 +23,20 @@ export default class Home extends View
         article.dataset.gotomain
 
         // fade in of the sphere
-        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "overview");
-        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
+        Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "overview");
+        Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
     }
 
     loadArticle(context: HTMLElement) {
         // this is the main page, codified
-        let ts = Render.AddDiv(context, "titlescreen");
+        let ts = Dom.AddDiv(context, "titlescreen");
         
-        let head = Render.AddDiv(ts, "title-header")
-        Render.AddH1(head, "Jos Feenstra");
-        Render.AddH2(head, "Master Student Geomatics @ TU Delft");
+        let head = Dom.AddDiv(ts, "title-header")
+        Dom.AddH1(head, "Jos Feenstra", "");
+        Dom.addH2(head, "Master Student Geomatics @ TU Delft", "");
         // mabye subheader text? 
   
-        let links = Render.AddDiv(ts, "title-navlinks");
+        let links = Dom.AddDiv(ts, "title-navlinks");
         App.RenderMainLinks(links);
         App.RenderSocials(ts);
     }
@@ -44,6 +44,6 @@ export default class Home extends View
     onUnload()
     {
         console.log("unloading home...");
-        Render.RemoveCss("./styles/home.css");
+        Dom.RemoveCss("./styles/home.css");
     }
 }

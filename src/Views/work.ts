@@ -1,31 +1,32 @@
 // Author : Jos Feenstra
 
-import App from "../system/app";
-import View from "./view";
-import {Route, RouteType} from "../system/app-helpers";
-import Render from "../system/render";
 
-export default class Work extends View 
+import { App } from "../system/app";
+import {Route, RouteType} from "../system/app-helpers";
+import { Dom } from "../system/dom";
+import { View } from "./view";
+
+export class Work extends View 
 {
     constructor(route: Route) 
     {
         super(route);
-        Render.AddCss('styles/work.css');
+        Dom.AddCss('styles/work.css');
     }
 
     loadArticle(context: HTMLElement) 
     {
 
-        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "bottom");
-        Render.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
-        const grid = Render.AddDiv(context, "grid");
+        Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "bottom");
+        Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
+        const grid = Dom.AddDiv(context, "grid");
 
         App.GetRoutes(RouteType.portfolio).forEach(item => 
         {
-            let div = Render.AddDiv(grid, "card");
-            let el = Render.AddElement(div, 'p', "tile-text").innerText = item.category!;
-            Render.AddElement(div, 'h2', "tile-text").innerText = item.name!;
-            Render.AddElement(div, 'p', "tile-text").innerText =  item.year!;
+            let div = Dom.AddDiv(grid, "card");
+            let el = Dom.add(div, 'p', "tile-text").innerText = item.category!;
+            Dom.add(div, 'h2', "tile-text").innerText = item.name!;
+            Dom.add(div, 'p', "tile-text").innerText =  item.year!;
             div.style.backgroundImage = "url("+ item.thumb! + ")";
             this.addListeners(div, item.hash);
         });
@@ -52,7 +53,7 @@ export default class Work extends View
 
     onUnload()
     {
-        Render.RemoveCss('styles/work.css');
+        Dom.RemoveCss('styles/work.css');
         super.onUnload();
     }
 }

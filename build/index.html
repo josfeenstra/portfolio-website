@@ -14,9 +14,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
-    <!-- <link rel="stylesheet" href=".\landing\css\main.css">
-    <link rel="stylesheet" href=".\landing\css\dropdown.css">
-    <link rel="stylesheet" href=".\landing\css\checkbox.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
         /* this needs to be included, so that it always runs no matter what */
@@ -50,13 +49,20 @@
     </style>
     <link href="./styles/index.css" rel="stylesheet" type="text/css"/>
 </head>
-<body class="app">  
-    <header></header>
-    <nav class="nav"></nav>
-    <article></article>
-    <footer></footer>
+<body class="app" class="scroll-container">  
+    <div class="scroll-container">
+        <div id="page" class="scroll-item">
+            <header></header>
+            <nav class="nav"></nav>
+            <article></article>
+            <footer></footer>
+        </div>
+    </div>
     <canvas id="canvas" tabindex="0" data-goto="side" data-filled="1" ></canvas>
     <div id="interface"></div>
+
+      <!-- scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>    
 </html>
 

@@ -1,12 +1,12 @@
 // Author : Jos Feenstra
 
-import Render from "./render";
 import { Route, RouteType } from "./app-helpers";
 import CD from "../utils/constant-data";
+import { Dom } from "./dom";
 // import Canvas from "../canvas/canvas";
 
 // single page app singleton
-export default class App {
+export class App {
 
     static isArticleRendered: boolean;
     static isNavRendered: boolean;
@@ -117,7 +117,7 @@ export default class App {
     {
         App.GetRoutes(RouteType.nav).forEach(route => 
         {
-            Render.AddLink(Render.AddDiv(context, CD.navlink), route.hash, route.name);
+            Dom.AddLink(Dom.AddDiv(context, CD.navlink), route.hash, route.name);
         }); 
     }
 
@@ -128,15 +128,15 @@ export default class App {
             App.isNavRendered = true;
 
             let nav = document.querySelector("nav")!;
-            let left = Render.AddDiv(nav, "left-side");
-            let brand = Render.AddDiv(left, "brand");
+            let left = Dom.AddDiv(nav, "left-side");
+            let brand = Dom.AddDiv(left, "brand");
             let hash = App.GetRoutes(RouteType.default)[0].hash;
-            Render.AddLink(brand, hash, "JOS FEENSTRA");
+            Dom.AddLink(brand, hash, "JOS FEENSTRA");
             
-            let right = Render.AddDiv(nav, "right-side");
+            let right = Dom.AddDiv(nav, "right-side");
             App.GetRoutes(RouteType.nav).forEach(route => 
             {
-                Render.AddLink(Render.AddDiv(right, CD.navlink), route.hash, route.name);
+                Dom.AddLink(Dom.AddDiv(right, CD.navlink), route.hash, route.name);
             });  
         } 
 
@@ -148,12 +148,12 @@ export default class App {
                 div.classList.contains(CD.navlink))
             {
                 // console.log("we are now at " + link.href);
-                Render.AddClass(div, CD.navlinkHighlight);
+                Dom.AddClass(div, CD.navlinkHighlight);
             }
             else
             {
                 // console.log("removing from" + link.href);
-                Render.RemoveClass(div, CD.navlinkHighlight);
+                Dom.RemoveClass(div, CD.navlinkHighlight);
             } 
         });  
     }
@@ -167,22 +167,22 @@ export default class App {
 
         App.RenderSocials(footer); 
 
-        let copyright = Render.AddDiv(footer, "copyright");
-            Render.AddText(copyright, "© 2020 Jos Feenstra");
+        let copyright = Dom.AddDiv(footer, "copyright");
+            Dom.addText(copyright, "© 2020 Jos Feenstra");
         return footer;
     }
 
     static RenderSocials(context: Element) 
     {
-        let footers = Render.AddDiv(context, "footer-links");
-        Render.AddLink(footers,"mailto:me@josfeenstra.nl", "Email", "socials-link");
-        Render.AddLink(footers,"https://github.com/josfeenstra", "Github", "socials-link");
-        Render.AddLink(footers,"https://www.linkedin.com/in/jos-feenstra-007369122/", "LinkedIn", "socials-link");
+        let footers = Dom.AddDiv(context, "footer-links");
+        Dom.AddLink(footers,"mailto:me@josfeenstra.nl", "Email", "socials-link");
+        Dom.AddLink(footers,"https://github.com/josfeenstra", "Github", "socials-link");
+        Dom.AddLink(footers,"https://www.linkedin.com/in/jos-feenstra-007369122/", "LinkedIn", "socials-link");
     }
 
     static ClearNav() 
     {
-        Render.Clear("nav");
+        Dom.clear("nav");
         App.isNavRendered = false;
     }
 
@@ -232,14 +232,14 @@ export default class App {
 
     static ClearArticle() : HTMLElement
     {
-        Render.Clear("article");
+        Dom.clear("article");
         App.isArticleRendered = false;
         return document.querySelector("article")!;
     }  
 
     static ClearFooter() 
     {
-        Render.Clear("footer");
+        Dom.clear("footer");
         App.isFooterRendered = false;
     }    
 

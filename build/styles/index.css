@@ -15,13 +15,6 @@
 
 /* MASTER STYLES */
 /* clean standard settings */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
 
 html {
     /* font-family: 'Courier New', Courier, monospace; */
@@ -39,87 +32,18 @@ a:hover {
     color: var(--main-active-color);
 }
 
-ul {
-    list-style:none;
-}
-
-p {
+/* p {
     white-space: normal;
     margin-bottom: 16px;
-}
-
-ol {
-    margin-bottom: 16px;
-}
-
-li {
-    margin-bottom: 8px;
-}
+} */
 
 strong {
     color: var(--main-text-color);
 }
 
-img {
-    width: 100%;
-    max-width: 100%;
-}
-
-body {
-    background-color: var(--main-bg-color);
-    margin: 0px;
-    font-size:100%;
-    max-width: 1200px;
-    align-items: center;
-    margin: auto;
-}
-
-h1 {
-    font-size: 6rem;
-    margin-bottom: 32px;
-}
-
-h2 {
-    margin-bottom: 32px;
-}
-
-h3 {
-    margin-bottom: 32px;
-}
-
-button {
-    position: inherit;
-    justify-self: left;
-    transform: translateY(-80px);
-    text-transform: uppercase;
-}
-
 *::selection {
     background: var(--main-active-color);
     color: white;
-}
-
-
-
-/* Main Pieces */
-
-/* .app {   
-    min-height: fit-content;
-    background-image: url("../images/background.png");
-    background-position: center;
-    background-size: 80px 80px;
-} */
-
-nav {
-    /* flexbox makes leftside / rightside things possible */
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    margin-top: 48px;
-    margin-left: 32px;
-    margin-right: 32px;
-    margin-bottom: 112px;
-    font-size: 1.2em;
 }
 
 canvas {
@@ -130,22 +54,6 @@ canvas {
 }
 
 /* Nav Elements */
-
-.left-side {
-    display: flex;
-}
-
-
-.right-side {
-    display: flex;
-}
-
-/* way to traverse a tree, loop as it were */
-.nav > .right-side > div {
-    margin-left: 4px;
-    text-align: center;
-    text-transform: uppercase;
-}
 
 .nav-link,
 .socials-link,
@@ -160,8 +68,8 @@ canvas {
     transition: border-bottom var(--main-transition-time);  
 }
 
-.nav-link a, 
-.socials-link a,
+.link a, 
+.link a,
 .brand a,
 .copyright a {
     margin: auto;
@@ -173,8 +81,8 @@ canvas {
 }
 
 /* pseudo states */
-.nav-link:hover,
-.socials-link:hover {
+.link:hover,
+.link:hover {
     border-bottom: 1px solid var(--main-active-color);
 }
 
@@ -200,7 +108,7 @@ canvas {
 
 /* Footer */
 
-footer {
+/* footer {
     padding-top: 80px;
     padding-left: 32px;
     padding-right: 32px;
@@ -221,7 +129,6 @@ footer {
 .socials-link {
     width: 100%;
     align-content: center;
-    /* padding: 40px; */
     color: var(--main-inactive-color);
     text-decoration: none;
     transition: var(--main-transition-time);;
@@ -234,47 +141,99 @@ footer {
 .copyright {
     padding-top: 16px;
     text-align: center;
-}
+} */
 
 /* Page */
 
-.columns {
+/* .columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: right;
-}
+} */
 
-.col1 {
+/* .col1 {
     width: 100%;
-    /* max-width: max-content; */
     padding: 32px;
     display: grid;
     justify-items: right;
-}
+} */
 
-.col1 > img {
+/* .col1 > img {
     margin-top: 8px;
     margin-bottom: 8px;
-}
+} */
 
-.col2 {
+/* .col2 {
     width: 100%;
     padding: 32px;
     justify-content: center;
     align-items: center;
     padding-bottom: 80px;
-}
-
-/* Other */
-
-/* .background {
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/background.png);
-    background-position: center;
-    background-size: 80px 80px;
 } */
 
+/* To make the background consistent */
+
+#article {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+@keyframes fade-in {
+    from { 
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, rgb(120, 122, 131), rgb(61, 63, 71));
+}
+
+.scroll-container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+
+    position: relative;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+.scroll-item {
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: none none;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: none;
+    border-radius: 20px;
+    border: 3px solid none;
+}
 
 /* responsiveness : change things for mobile users */
 
@@ -292,3 +251,5 @@ footer {
         order: 1;
     }
 }
+
+

@@ -1,5 +1,74 @@
 // author : Jos Feenstra 
-export default class Render
+
+export type ElementType = "div" | "h1" | "h2" | "a" | "p"; 
+
+export class DomHead {
+    
+    constructor() {
+
+    }
+
+    AddCss(fileName : string) 
+    {
+        // add a style sheet to the document
+        var head = document.head;
+        var link = document.createElement("link");
+        
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = fileName;
+        link.className = fileName;
+        head.appendChild(link);
+    }
+
+    RemoveCss(fileName : string)
+    {
+        // TODO
+        var links = document.querySelectorAll("link")!;
+        links.forEach(link => {
+            console.log(link.href);
+            if (link.className == fileName) link.remove();
+        });
+    }
+}
+
+export class DomBody {
+
+    constructor(
+        public pointer: HTMLElement | Document = document,
+    ) {
+        
+    }
+
+    moveTo(obj: HTMLElement) {
+        this.pointer = obj;
+    }
+
+    add(type : ElementType, classes="", content="") {
+        let el = document.createElement(type)
+        el.innerText = content;
+        el.className = classes;
+        this.pointer.appendChild(el);
+        return el;
+    }
+
+    clear() {
+        while(this.pointer.firstChild) {
+            // let child = element.firstChild as HTMLElement;
+            // child.style.animation = 'hide 300ms';
+            this.pointer.removeChild(this.pointer.firstChild);
+        }
+    }
+}
+
+export class DomNew {
+    constructor(
+        public head= new DomHead(),
+        public body= new DomBody()
+    ) {}
+}
+
+export class Dom
 {  
     static AddClass(element : Element, className: string)
     {
@@ -36,6 +105,14 @@ export default class Render
         });
     }
 
+    static add(context : Element, type : ElementType, classes="", content="") {
+        let el = document.createElement(type)
+        el.innerText = content;
+        el.className = classes;
+        context.appendChild(el);
+        return el;
+    }
+
     static AddLink(context : Element, link : string, name : string, className : string = "") {
         let el = document.createElement("a");
         el.href = link;
@@ -57,24 +134,18 @@ export default class Render
         h1.innerText = message;
         h1.className = className;
         context.appendChild(h1);
+        return h1
     }
 
-    static AddH2(context : Element, message : string, className : string="") {
+    static addH2(context : Element, message : string, className : string="") {
         let h2 = document.createElement("h2");
         h2.innerText = message;
         h2.className = className;
         context.appendChild(h2);
+        return h2;
     }
 
-
-    static AddElement(context : Element, element : string, className : string = "") {
-        let el = document.createElement(element)
-        el.className = className;
-        context.appendChild(el);
-        return el;
-    }
-
-    static AddText(container : Element, message : string, className : string = "")
+    static addText(container : Element, message : string, className : string = "")
     {
         const p = document.createElement("p")
         p.className = className;
@@ -83,7 +154,7 @@ export default class Render
         container.appendChild(p);
     }
 
-    static Clear(selector : string)
+    static clear(selector : string)
     {
         // clear a wrapper
         const elements = document.querySelectorAll(selector);

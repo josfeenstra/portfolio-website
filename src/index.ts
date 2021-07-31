@@ -1,12 +1,12 @@
 // author : Jos Feenstra
 // entry point 
 
-import Home from "./Views/home";
-import Work from "./Views/work";
-import View from "./Views/view";
+import { App } from "./system/app";
+import { Route } from "./system/app-helpers";
+import { Home } from "./Views/home";
+import { View } from "./Views/view";
+import { Work } from "./Views/work";
 
-import {Route} from "./system/app-helpers";
-import App from "./system/app";
 // import Canvas from "./canvas/canvas";
 // import CD from "./utils/constant-data";
 
