@@ -2,7 +2,7 @@
 
 import { App } from "../system/app";
 import { Route } from "../system/app-helpers";
-import { Dom } from "../system/dom";
+import { dom, Dom } from "../system/dom";
 import { View } from "./view";
 
 export class Home extends View 
@@ -26,23 +26,23 @@ export class Home extends View
         Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
     }
 
-    loadArticle(context: HTMLElement) {
+    async loadArticle(context: HTMLElement) {
         // this is the main page, codified
-        let ts = Dom.AddDiv(context, "titlescreen");
-        
-        let head = Dom.AddDiv(ts, "title-header")
-        Dom.AddH1(head, "Jos Feenstra", "");
-        Dom.addH2(head, "Master Student Geomatics @ TU Delft", "");
-        // mabye subheader text? 
-  
-        let links = Dom.AddDiv(ts, "title-navlinks");
-        App.RenderMainLinks(links);
-        App.RenderSocials(ts);
+        dom.to(context);
+        dom.addAndTo("div", "container-lg");
+        dom.addAndTo("div", "row justify-content-center align-items-center");
+        dom.set("style", "height: 90vh;")
+        dom.addAndTo("div", "col-lg-6 text-center mt-5 align-middle")
+        dom.add("h1", "display-1", "Jos Feenstra");
+        dom.add("h2", "display-6", "Master Student Geomatics | Developer | Enthusiast");
+        dom.add("p", "lead my-4", "Welcome to my portfolio, feel free to look around");
+        dom.addAndTo("div", "");
+        App.RenderMainLinks(dom.pointer as HTMLElement);
+        App.RenderSocials(dom.pointer as HTMLElement);
     }
 
     onUnload()
     {
         console.log("unloading home...");
-        Dom.RemoveCss("./styles/home.css");
     }
 }

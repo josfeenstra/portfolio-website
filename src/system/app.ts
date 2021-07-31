@@ -2,7 +2,7 @@
 
 import { Route, RouteType } from "./app-helpers";
 import CD from "../utils/constant-data";
-import { Dom, DomWriter } from "./dom";
+import { dom, Dom, DomWriter } from "./dom";
 // import Canvas from "../canvas/canvas";
 
 // TODO split away the router itself
@@ -171,10 +171,14 @@ export class App {
 
     //#region Rendering Html
 
-    static RenderMainLinks(context: Element) {
+    static RenderMainLinks(context: HTMLElement) {
+        dom.to(context);
+        dom.addAndTo("div", "d-grid gap-2 col-6 mx-auto")
         App.getRoutes(RouteType.nav).forEach(route => 
         {
-            Dom.AddLink(Dom.AddDiv(context, CD.navlink), route.hash, route.name);
+            dom.inner += `
+                <a href="${route.hash}" class="btn btn-secondary">${route.name}</a>
+            `
         }); 
     }
 
@@ -247,10 +251,10 @@ export class App {
     }
 
     static RenderSocials(context: Element) {
-        let footers = Dom.AddDiv(context, "footer-links");
-        Dom.AddLink(footers,"mailto:me@josfeenstra.nl", "Email", "socials-link");
-        Dom.AddLink(footers,"https://github.com/josfeenstra", "Github", "socials-link");
-        Dom.AddLink(footers,"https://www.linkedin.com/in/jos-feenstra-007369122/", "LinkedIn", "socials-link");
+        let footers = Dom.AddDiv(context, "footer-links mt-3");
+        Dom.AddLink(footers,"mailto:me@josfeenstra.nl", "Email", "socials-link mx-1");
+        Dom.AddLink(footers,"https://github.com/josfeenstra", "Github", "socials-link mx-1");
+        Dom.AddLink(footers,"https://www.linkedin.com/in/jos-feenstra-007369122/", "LinkedIn", "socials-link mx-1");
     }
 
     static ClearNav() {

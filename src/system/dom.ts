@@ -111,6 +111,9 @@ export class DomWriter {
     }
 }
 
+export const dom = DomWriter.new();
+
+
 export class DomNew {
     constructor(
         public head= new DomHead(),

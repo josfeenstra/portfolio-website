@@ -13,7 +13,7 @@ export class Work extends View
         super(route);
     }
 
-    loadArticle(context: HTMLElement) 
+    async loadArticle(context: HTMLElement) 
     {
         let dom = new DomWriter();
         dom.toId("canvas")

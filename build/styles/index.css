@@ -183,19 +183,26 @@ canvas {
 
 @keyframes fade-in {
     from { 
-        opacity: 0;
+        filter: brightness(100)
     }
     50% {
-        opacity: 0;
+        filter: brightness(100)
     }
     to {
-        opacity: 1;
+        filter: brightness(0)
     }
+}
+
+#backdrop {
+    height: 100vh;
+    width: 100vw;
+    animation: fade-in 3s;
+    background-image: linear-gradient(to bottom right, rgb(120, 122, 131), rgb(61, 63, 71));
 }
 
 body {
     overflow: hidden;
-    background-image: linear-gradient(to bottom right, rgb(120, 122, 131), rgb(61, 63, 71));
+
 }
 
 .scroll-container {
@@ -207,6 +214,7 @@ body {
     position: relative;
     backface-visibility: hidden;
     will-change: overflow;
+
 }
 
 .scroll-item {
