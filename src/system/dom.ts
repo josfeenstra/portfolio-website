@@ -32,7 +32,8 @@ export class DomHead {
     }
 }
 
-export class DomBody {
+// TODO add some more jquery functionalities
+export class DomWriter {
 
     constructor(
         public pointer: HTMLElement | Document = document,
@@ -40,8 +41,27 @@ export class DomBody {
         
     }
 
-    moveTo(obj: HTMLElement) {
+    static new() {
+        return new DomWriter();
+    }
+
+    to(obj: HTMLElement | Document) {
         this.pointer = obj;
+        return this;
+    }
+
+    addAndTo(type : ElementType, classes="", content="") {
+        return this.to(this.add(type, classes, content));
+    }
+
+    toId(id: string) {
+        this.pointer = document.getElementById(id)!;
+        return this;
+    }
+
+    toSelect(selector: string) {
+        this.pointer = document.querySelector(selector)! as HTMLElement;
+        return this;
     }
 
     add(type : ElementType, classes="", content="") {
@@ -58,13 +78,43 @@ export class DomBody {
             // child.style.animation = 'hide 300ms';
             this.pointer.removeChild(this.pointer.firstChild);
         }
+        return this
+    }
+
+    set(attribute: string, value: string) {
+        if (this.pointer instanceof Document) {
+            throw new Error("not possible with document selected!")
+        } 
+        this.pointer.setAttribute(attribute, value);
+        return this;
+    }
+
+    get inner() {
+        if (this.pointer instanceof Document) {
+            throw new Error("not possible with document selected!")
+        } 
+        return this.pointer.innerHTML;
+    }
+
+    set inner(str: string) {
+        if (this.pointer instanceof Document) {
+            throw new Error("not possible with document selected!")
+        } 
+        this.pointer.innerHTML = str;
+    }
+
+    get classes() {
+        if (this.pointer instanceof Document) {
+            throw new Error("not possible with document selected!")
+        } 
+        return this.pointer.classList;
     }
 }
 
 export class DomNew {
     constructor(
         public head= new DomHead(),
-        public body= new DomBody()
+        public body= new DomWriter()
     ) {}
 }
 

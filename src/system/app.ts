@@ -2,8 +2,77 @@
 
 import { Route, RouteType } from "./app-helpers";
 import CD from "../utils/constant-data";
-import { Dom } from "./dom";
+import { Dom, DomWriter } from "./dom";
 // import Canvas from "../canvas/canvas";
+
+// TODO split away the router itself
+export class SpaRouter {
+
+    route: Route;
+    routeDefault: Route;
+
+    constructor(public routes: Route[], currentHash: string) {
+        this.routes = routes;
+        this.route = this.routes[0];
+        this.routeDefault = this.routes[0];
+        this.setup();
+        this.tryGo(currentHash);
+    }
+
+    // single page application setup
+    setup() {
+        console.log("setting up router...");
+
+        // setup browser functionalities for single page app
+        onpopstate = function(event) { 
+            // console.log("triggereded!");
+            App.tryGo(location.hash); 
+        }
+        
+        // reroute internal href links to fake hash links
+        document.body.addEventListener("click", e => {
+            // console.log("trigger!");
+            const target = e.target as HTMLLinkElement;
+            if (target.matches("[data-link]")) {
+                //e.preventDefault();
+                //Router.Go(new URL(target.href));
+            }
+        }) 
+    }
+
+    async tryGo(hash : string) {
+        // console.log("setting route to hash:", hash)
+        const potentialMatches = App.routes.map(route => {
+            return {
+                route: route,
+                isMatch: hash === route.hash
+            };
+        }); 
+
+        let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch);
+        
+        if (!match)
+        {
+            console.log(`hash "${hash}" was invalid! going to main menu...`)
+            //App.route = App.routeDefault;
+        }
+        else 
+        {
+            console.log("found a match!: " + match.route.name);
+            App.route = match.route;
+        }
+        history.pushState(hash, document.title, hash);    
+        App.render(); 
+    }
+
+    redirect(path : string) {
+        window.location.replace(path);
+    }
+
+    getRoutes(type : RouteType) : Route[] {
+        return App.routes.filter(route => route.type == type);
+    } 
+}
 
 // single page app singleton
 export class App {
@@ -17,25 +86,19 @@ export class App {
     static routeDefault: Route;
     static view: any;
 
-    static Init(routes: Route[], currentHash: string) 
-    {
+    static Init(routes: Route[], currentHash: string) {
         App.isArticleRendered = false;
         App.isNavRendered = false;
         App.isFooterRendered = false;
         
         App.routes = routes;
 
-        App.SetupRouter(currentHash);
-    }
-
-    static Print(message: string) {
-        console.log(message);
+        App.setup(currentHash);
     }
 
     //#region Routing
 
-    static SetupRouter(currentHash: string) 
-    {
+    static setup(currentHash: string) {
         console.log("setting up router...");
         // console.log(currentHash);
         App.route = App.routes[0];
@@ -44,15 +107,13 @@ export class App {
         App.routeDefault = App.routes[0];
 
         // setup browser functionalities for single page app
-        onpopstate = function(event) 
-        { 
+        onpopstate = function(event) { 
             // console.log("triggereded!");
-            App.TryGo(location.hash); 
+            App.tryGo(location.hash); 
         }
         
         // reroute internal href links to fake hash links
-        document.body.addEventListener("click", e => 
-        {
+        document.body.addEventListener("click", e => {
             // console.log("trigger!");
             const target = e.target as HTMLLinkElement;
             if (target.matches("[data-link]")) {
@@ -62,11 +123,10 @@ export class App {
         }) 
 
         // setup the environment for popState.
-        App.TryGo(currentHash);
+        App.tryGo(currentHash);
     }
 
-    static async TryGo(hash : string) 
-    {
+    static async tryGo(hash : string) {
         // console.log("setting route to hash:", hash)
         const potentialMatches = App.routes.map(route => {
             return {
@@ -79,7 +139,7 @@ export class App {
         
         if (!match)
         {
-            console.log("hash was invalid! going to main menu...")
+            console.log(`hash "${hash}" was invalid! going to main menu...`)
             //App.route = App.routeDefault;
         }
         else 
@@ -88,11 +148,10 @@ export class App {
             App.route = match.route;
         }
         history.pushState(hash, document.title, hash);    
-        App.Render(); 
+        App.render(); 
     }
 
-    static Render() 
-    {
+    static render() {
         if (App.view != null) 
             App.view.onUnload();
         App.view = new this.route.view(App.route);
@@ -100,12 +159,11 @@ export class App {
         // Canvas.onResizeCanvas();
     }
 
-    static Redirect(path : string) 
-    {
+    static redirect(path : string) {
         window.location.replace(path);
     }
 
-    static GetRoutes(type : RouteType) : Route[] {
+    static getRoutes(type : RouteType) : Route[] {
         return App.routes.filter(route => route.type == type);
     } 
 
@@ -113,39 +171,56 @@ export class App {
 
     //#region Rendering Html
 
-    static RenderMainLinks(context: Element)
-    {
-        App.GetRoutes(RouteType.nav).forEach(route => 
+    static RenderMainLinks(context: Element) {
+        App.getRoutes(RouteType.nav).forEach(route => 
         {
             Dom.AddLink(Dom.AddDiv(context, CD.navlink), route.hash, route.name);
         }); 
     }
 
-    static RenderNav() 
-    {
+    static RenderNav() {
         if (!App.isNavRendered) 
         {
             App.isNavRendered = true;
 
-            let nav = document.querySelector("nav")!;
-            let left = Dom.AddDiv(nav, "left-side");
-            let brand = Dom.AddDiv(left, "brand");
-            let hash = App.GetRoutes(RouteType.default)[0].hash;
-            Dom.AddLink(brand, hash, "JOS FEENSTRA");
-            
-            let right = Dom.AddDiv(nav, "right-side");
-            App.GetRoutes(RouteType.nav).forEach(route => 
+            let items: string[] = [];
+            App.getRoutes(RouteType.nav).forEach(route => 
             {
-                Dom.AddLink(Dom.AddDiv(right, CD.navlink), route.hash, route.name);
+                items.push(`
+                <li class="nav-item">
+                    <a class="nav-link" href="${route.hash}">${route.name}</a>
+                </li>
+                `)
+                console.log("lala");
             });  
+
+            let dom = DomWriter.new();
+            dom.toId("auto-nav");
+            dom.classes.add("navbar","navbar-expand-md","navbar-");
+            dom.inner = `
+            <div class="container-xxl">
+                <a class="navbar-brand" href="#home">
+                    <span class="text-secondary fw-bold">
+                    Jos Feenstra
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                    <ul class="navbar-nav">
+                        ${items.join("")}
+                    </ul>
+                </div>
+            </div>`; 
         } 
 
         // set nav highlight
-        document.querySelectorAll("." + CD.navlink).forEach(div => 
+        document.querySelectorAll(".nav-item").forEach(div => 
         {
             let link = div.children[0] as HTMLAnchorElement;
             if (new URL(link.href).hash  == App.route.hash &&
-                div.classList.contains(CD.navlink))
+                div.classList.contains(".nav-item"))
             {
                 // console.log("we are now at " + link.href);
                 Dom.AddClass(div, CD.navlinkHighlight);
@@ -158,8 +233,7 @@ export class App {
         });  
     }
 
-    static RenderFooter() 
-    {
+    static RenderFooter() {
         if (App.isFooterRendered) return;
         App.isFooterRendered = true;
 
@@ -172,63 +246,17 @@ export class App {
         return footer;
     }
 
-    static RenderSocials(context: Element) 
-    {
+    static RenderSocials(context: Element) {
         let footers = Dom.AddDiv(context, "footer-links");
         Dom.AddLink(footers,"mailto:me@josfeenstra.nl", "Email", "socials-link");
         Dom.AddLink(footers,"https://github.com/josfeenstra", "Github", "socials-link");
         Dom.AddLink(footers,"https://www.linkedin.com/in/jos-feenstra-007369122/", "LinkedIn", "socials-link");
     }
 
-    static ClearNav() 
-    {
+    static ClearNav() {
         Dom.clear("nav");
         App.isNavRendered = false;
     }
-
-    // static ArticleCounter = 0;
-
-    // static async GetNewArticle() : Promise<HTMLElement>
-    // {
-    //     if (this.ArticleCounter == 0)
-    //         return this.FirstArticle();
-    //     else 
-    //         return this.NextArticle();
-    // }
-
-    // private static FirstArticle() : HTMLElement
-    // {
-    //     let article = document.querySelector('article')!;
-    //     article.className = "article" + App.ArticleCounter;
-    //     App.ArticleCounter += 1;
-    //     return article;
-    // }
-
-    // private static NextArticle()  : HTMLElement
-    // {
-        
-    //     let articleOldName = ".article" + (App.ArticleCounter - 1);
-    //     let articleNewName = "article" + App.ArticleCounter;
-        
-    //     console.log(articleOldName);
-
-    //     let articleOld = document.querySelector(articleOldName)! as HTMLElement;
-    //     let articleNew = document.createElement('article');
-    //     articleNew.className = articleNewName;
-    //     articleOld.insertAdjacentElement("afterend", articleNew);
-
-        
-    //     // articleOld.insertAdjacentHTML("afterend", articleNew.innerHTML);
-    //     articleOld.style.animation = 'remove 300ms'
-    //     articleOld.onanimationend = function() {
-    //         console.log("delete me!");
-    //         document.querySelector('.app')!.removeChild(articleOld)
-    //     }
-        
-    //     App.ArticleCounter += 1;
-
-    //     return articleNew
-    // }
 
     static ClearArticle() : HTMLElement
     {

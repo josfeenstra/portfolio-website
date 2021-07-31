@@ -13,7 +13,6 @@ export class Home extends View
 
     async onLoad() {
         // console.log("loading home...");
-        Dom.AddCss("./styles/home.css");
 
         App.ClearNav();
         let article = await App.ClearArticle();  

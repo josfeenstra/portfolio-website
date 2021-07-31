@@ -24,18 +24,21 @@ html {
 }
 
 a {
-    color: var(--main-active-color-sec);
     text-decoration: none;  
+    color: var(--main-active-color-sec);
 }
 
 a:hover {
     color: var(--main-active-color);
 }
 
-/* p {
-    white-space: normal;
-    margin-bottom: 16px;
-} */
+h1, h2, h3, h4, h5, h6, a {
+    color: var(--main-text-color);
+}
+
+p {
+    color: var(--main-text-color-dark);
+}
 
 strong {
     color: var(--main-text-color);
@@ -237,7 +240,7 @@ body {
 
 /* responsiveness : change things for mobile users */
 
-@media only screen and (max-width: 800px) 
+/* @media only screen and (max-width: 800px) 
 {
     .columns {
         display: grid;
@@ -251,5 +254,5 @@ body {
         order: 1;
     }
 }
-
+ */
 

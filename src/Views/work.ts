@@ -3,7 +3,7 @@
 
 import { App } from "../system/app";
 import {Route, RouteType} from "../system/app-helpers";
-import { Dom } from "../system/dom";
+import { Dom, DomWriter } from "../system/dom";
 import { View } from "./view";
 
 export class Work extends View 
@@ -11,22 +11,26 @@ export class Work extends View
     constructor(route: Route) 
     {
         super(route);
-        Dom.AddCss('styles/work.css');
     }
 
     loadArticle(context: HTMLElement) 
     {
+        let dom = new DomWriter();
+        dom.toId("canvas")
+            .set("data-goto", "bottom")
+            .set("data-filled", "1")
+        
+        dom.to(context)
+        
+        const grid = dom.add("div", "grid");
 
-        Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-goto", "bottom");
-        Dom.TrySetElementAttributeById<HTMLCanvasElement>("canvas", "data-filled", "1");
-        const grid = Dom.AddDiv(context, "grid");
-
-        App.GetRoutes(RouteType.portfolio).forEach(item => 
+        App.getRoutes(RouteType.portfolio).forEach(item => 
         {
-            let div = Dom.AddDiv(grid, "card");
-            let el = Dom.add(div, 'p', "tile-text").innerText = item.category!;
-            Dom.add(div, 'h2', "tile-text").innerText = item.name!;
-            Dom.add(div, 'p', "tile-text").innerText =  item.year!;
+            let div = dom.to(grid).add("div", "card");
+            dom.to(div);
+            dom.add("p", "tile-text", item.category!);
+            dom.add("h2", "tile-text", item.name!);
+            dom.add("p", "tile-text", item.year!);
             div.style.backgroundImage = "url("+ item.thumb! + ")";
             this.addListeners(div, item.hash);
         });
@@ -45,15 +49,10 @@ export class Work extends View
         item.onmousedown = function() {
             // item.style.transform = 'scale(1.00)';
         }
-        item.onmouseup = function() {
+        item.onmouseup = function(ev) {
+            if (ev.button == 2) return;
             // item.style.transform = '';
-            App.TryGo(hash);
+            App.tryGo(hash);
         }   
-    }
-
-    onUnload()
-    {
-        Dom.RemoveCss('styles/work.css');
-        super.onUnload();
     }
 }

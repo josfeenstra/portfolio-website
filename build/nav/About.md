@@ -6,11 +6,11 @@ I enjoy tackling problems which necessitate a wholistic approach. I have discove
 
 I would love to get in contact via one of the channels below. Looking forward hearing from you!  
 
-[1]: <http://josfeenstra.nl/#architecture> "link to architecture"
-[2]: <http://josfeenstra.nl/#minor> "link to minor"
-[3]: <http://josfeenstra.nl/#sfered> "link to sfered"
-[4]: <http://josfeenstra.nl/#geomatics> "link to geomatics"
-[5]: <http://josfeenstra.nl/#synthesis> "synthesis project"
-[6]: <http://josfeenstra.nl/#groover> "groover"
+[1]: <#architecture> "link to architecture"
+[2]: <#minor> "link to minor"
+[3]: <#sfered> "link to sfered"
+[4]: <#geomatics> "link to geomatics"
+[5]: <#synthesis> "synthesis project"
+[6]: <#groover> "groover"
 
 [7]: <https://josfeenstra.nl/demo/geon/#sphericaltwo> "Demo"
