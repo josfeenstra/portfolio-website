@@ -1,6 +1,6 @@
 // author : Jos Feenstra 
 
-export type ElementType = "div" | "h1" | "h2" | "a" | "p"; 
+export type ElementType = "div" | "h1" | "h2" | "a" | "p" | "img" | "span"; 
 
 export class DomHead {
     

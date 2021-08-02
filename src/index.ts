@@ -44,9 +44,11 @@ const ROUTES : Route[] =
 
 const ENTRIES : string[] = 
 [
-    "Sfered | 2018-2021 | Job",
+    "Geon | 2020-now | Study",
+
+    "Sfered | 2018-now | Job",
     "Gazelle | 2018-2020 | Job",
-    "OV3 | 2019 | Job",
+    "OV3 | 2019-2020 | Job",
 
     // "Thesis | 2021-2022 | Study",
     "Synthesis | 2020 | Study",
@@ -54,9 +56,10 @@ const ENTRIES : string[] =
     "Minor | 2017-2018 | Study",
     "Architecture | 2015-2018 | Study",
 
-    "Website | 2020 | Hobby",
-    "Chess | 2020 | Hobby",
+    "Website | 2020-now | Hobby",
 
+    "Chess | 2020 | Hobby",
+    "Bamimoth | 2019-now | Hobby",
     "Groover | 2016-2021 | Volunteering",
 ];
 

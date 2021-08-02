@@ -21,7 +21,7 @@ export enum RouteType {
     notFound = 404, // default if router cannot resolve a path
     default = 0, // entry page
     nav = 1, // 
-    portfolio = 2 // 
+    portfolio = 2 // poftfolio item
 }
 
 export interface Route {
