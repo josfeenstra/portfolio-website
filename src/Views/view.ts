@@ -33,11 +33,6 @@ export class View
 
     async loadArticle(context: HTMLElement) 
     {  
-        let path = this.route.page!;
-        let res = await fetch(path);
-        let text = await res.text();
-        this.initMarkdownPage(context, text, ["button", "img"]);
-
         // // fade in of the sphere
         dom.toId("canvas");
         dom.set("data-filled", "1");
@@ -48,44 +43,67 @@ export class View
         } else {
             dom.set("data-goto", "bottom");
         }
+
+        let path = this.route.page!;
+        let res = await fetch(path);
+        let text = await res.text();
+
+        this.initMarkdownPage(context, text);
+
     }
 
     // fill the entire context with whatever we find in markdown
     // build two columns, put all 'extractnodes' into the first, and the text in the second 
-    private initMarkdownPage(context : HTMLElement, markdown : string, extractNodes: string[])
+    private initMarkdownPage(context : HTMLElement, markdown : string)
     {
+        // start processing the html, dont add it to the page yet, we will do some post-processing
         let html = converter.makeHtml(markdown);
-
         let article = Dom.AddDiv(context, "container mt-5");
 
+        // create an arrow back to the `works` menu, if this is a portfolio item
         if (this.route.type == RouteType.portfolio) {
             let div = Dom.AddDiv(article, "row mb-4 justify-content-center m-0");
-            let btn = Dom.AddLink(div, "#works", "", "btn btn-block btn-outline-light col-2")
-            btn.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-            </svg>
-            `
+            let btn = Dom.AddLink(div, "#works", `<i class="bi bi-caret-up-fill"></i>`, "btn btn-block btn-outline-light col-2")
         }
 
+        // spacing
         let columns = Dom.AddDiv(article, "row mt-5 justify-content-center");
         let col1 = Dom.AddDiv(columns, "col-md-6 my-5");
 
-        if (this.route.hash == "#about") {
-            columns.classList.replace("justify-content-center", "justify-content-right")
+        // make sure non-portfolio items are spaced differently
+        if (this.route.type != RouteType.portfolio) {
+            columns.classList.replace("justify-content-center", "justify-content-end")
         }
 
-
+        // finally, load the html
         let mdwrapper = Dom.AddDiv(col1, "mb-5");
         mdwrapper.innerHTML = html;
 
-        let imageWrapper = Dom.AddDiv(col1, "mt-5");
-        extractNodes.forEach(nodename => {
-            col1.querySelectorAll(nodename).forEach(img => {
-                img.className = "img-fluid mb-2";
-                imageWrapper.appendChild(img);
+        // turn links in `blockquote` blocks into wide buttons.
+        console.log(html);
+        col1.querySelectorAll("blockquote").forEach(block => {
+            block.querySelectorAll("a").forEach(a => {
+
+                // set an icon
+                let icon = "";
+                if (a.href.includes("github")) {
+                    icon = "github";
+                } else if (a.href.includes("http")) {
+                    icon = "globe";
+                }
+                a.innerHTML = `<i class="bi bi-${icon}"></i> ` + a.innerHTML
+                a?.classList.add("btn","btn-outline-light","btn-block")
             });
         });
+
+        // put all images at the bottom of the page
+        let imageWrapper = Dom.AddDiv(col1, "mt-5");
+
+        col1.querySelectorAll("img").forEach(img => {
+            img.className = "img-fluid mb-2";
+            imageWrapper.appendChild(img);
+        });
+
     }
 
     afterLoadArticle(context: HTMLElement)

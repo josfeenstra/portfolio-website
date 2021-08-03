@@ -1,10 +1,8 @@
-![Something] (portfolio/ov3/thumb.png)
-![Screenshot 1 of sample project] (portfolio/ov3/screenshot1.png)
-![Screenshot 2 of sample project] (portfolio/ov3/screenshot2.png)
-
 # Overdracht & Vorm 3
+<br>
 
 ### Student assistant | Grasshopper tutoring | Computational design
+<br>
 
 [BK3OV3][1] Is a subject given at the TU-Delft, Faculty of Architecture, during the bachelor.
 It teaches architecture students a methodology dubbed *computational design* (also called *parametric design* or *performative design*).
@@ -32,6 +30,13 @@ of a helpdesk, where I gave students advice and demonstrations of how their regu
 parametric, digital configurations. This created several small sample projects, which I have documented in [this][5] repo.
 It was a great experience to work together with the some of the faculty's experts on computational design.
 They were very welcoming, I learned a great deal from them, and we had a lot of fun!
+
+<br>
+
+![Something] (portfolio/ov3/thumb.png)
+![Screenshot 1 of sample project] (portfolio/ov3/screenshot1.png)
+![Screenshot 2 of sample project] (portfolio/ov3/screenshot2.png)
+
 
 [1]: <http://toi.bk.tudelft.nl/?p=bk3ov3> "Go to bk3ov3"
 [2]: <https://www.grasshopper3d.com/> "Grasshopper"

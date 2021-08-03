@@ -2,8 +2,10 @@
 ![Image] (portfolio/groover/commissies.jpg)
 
 # D.S.J.V. Groover
+<br>
 
 ### Student Jazz Society | Commissions | Social
+<br>
 
 My time as a student wouldn't have been complete without my favorite place in
 All of delft, the [Delft Student Jazz Society called Groover][1]. 
@@ -21,5 +23,6 @@ and other artworks as part of the Illustration Commission. Right now I work as p
  memories and pictures of the last 5 years. These will be put in a 350 page book, 
  which will be released in September 2021.
 
+<br>
 
 [1]: <http://grooverjazz.nl>

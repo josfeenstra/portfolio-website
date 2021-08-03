@@ -1,7 +1,8 @@
-
-
 # Thesis
+<br>
 
-### Geomatics | ??? | TODO
+### Geomatics
+<br>
 
-I am yet undecided what my thesis will be. Please contact me if you have got a proposal!
+[No Text yet]
+<br>

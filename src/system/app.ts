@@ -195,7 +195,6 @@ export class App {
                     <a class="nav-link" href="${route.hash}">${route.name}</a>
                 </li>
                 `)
-                console.log("lala");
             });  
 
             let dom = DomWriter.new();

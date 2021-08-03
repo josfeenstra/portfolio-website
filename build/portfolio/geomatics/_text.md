@@ -1,11 +1,8 @@
-![Water Propagation] (portfolio/geomatics/thumb.png "runoff modelling")
-![Points] (portfolio/geomatics/points.png "a more efficient TIN of a point cloud")
-![Normal Flipping] (portfolio/geomatics/normal-flipping.png "normal-flipping")
-![Voxelization] (portfolio/geomatics/voxelization.png "voxelization")
-
 # Geomatics
+<br>
 
 ### Master | Geodesy | TU Delft
+<br>
 
 While this master track is located within the faculty of architecture at the TU-Delft, 
 That is about all the connection it has to my bachelor of [Architecture][1]. 
@@ -16,6 +13,13 @@ So why choose geomatics? Well, because I suspected that, below this surface leve
 This suspicion appeared to be correct, as in the second quarter, we started to finally learn the deeper theory of concepts I had touched during my time toying with [geometry][2]. Linear algebra applied to 3D graphics, common data structures of 3D geometry such as breps, Least squares adjustment of point-clouds, etc. 
 
 Right now, I am still having a great time studying here, and I will be starting my thesis soon. 
+
+<br>
+
+![Water Propagation] (portfolio/geomatics/thumb.png "runoff modelling")
+![Points] (portfolio/geomatics/points.png "a more efficient TIN of a point cloud")
+![Normal Flipping] (portfolio/geomatics/normal-flipping.png "normal-flipping")
+![Voxelization] (portfolio/geomatics/voxelization.png "voxelization")
 
 [1]: <http://josfeenstra.nl/#architecture>
 [2]: <http://josfeenstra.nl/#ov3>

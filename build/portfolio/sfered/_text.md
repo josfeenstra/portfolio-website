@@ -1,10 +1,8 @@
-![Image1] (portfolio/sfered/thumb.png)
-![Image2] (portfolio/sfered/voronoi.png)
-![Image3] (portfolio/sfered/hinge-design.gif)
-
 # Sfered
+<br>
 
 ### Computational NURBS-geometry | 3D scanning | 3D printing
+<br>
 
 [Sfered][1] is an Amsterdam based software company specialized in custom eyewear.
 Sfered's core platform involves scanning a customers' facial features, after which he/she can choose a special model of glasses.
@@ -17,5 +15,13 @@ During my three years as developer and parametric modeller at Sfered, I have cre
 3. **Gazelle:** In-house grasshopper plugin. See [Gazelle][2].
 4. **The Fit Engine:** In order to make a pair of glasses fit its user confortably, several facial features need to be found with high accuracy. I have derived feature recognition tools, inspired by methods used within the field of Geomatics.
 
+<br>
+
+![Image1] (portfolio/sfered/thumb.png)
+![Image2] (portfolio/sfered/voronoi.png)
+![Image3] (portfolio/sfered/hinge-design.gif)
+
+
 [1]: <http://sfered.nl/> "Go to Sfered."
 [2]: <http://josfeenstra.nl/#gazelle> "Go to Gazelle"
+

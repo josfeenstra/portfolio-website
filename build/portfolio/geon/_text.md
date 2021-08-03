@@ -1,9 +1,15 @@
 # Geon Engine
+<br>
 
 ### Computational Geometry | Render Engine | Web Frontend
+<br>
 
 A no-dependency 3D engine for delivering interactive 3d experiences on the web. Think barebones three.js, but with a focus on parametric design / procedural generation.
 
-[repo](https://github.com/josfeenstra/geon-demo/)
+<br>
 
-[online](http://josfeenstra.nl/demo/geon/)
+> [Live Demo](http://josfeenstra.nl/demo/geon/)
+> [Repo](https://github.com/josfeenstra/geon-demo/)
+
+
+

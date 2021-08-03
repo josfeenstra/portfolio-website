@@ -26,7 +26,6 @@ export class DomHead {
         // TODO
         var links = document.querySelectorAll("link")!;
         links.forEach(link => {
-            console.log(link.href);
             if (link.className == fileName) link.remove();
         });
     }
