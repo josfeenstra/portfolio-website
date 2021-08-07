@@ -1,10 +1,10 @@
 # Geon Engine
 <br>
 
-### Computational Geometry | Render Engine | Web Frontend
+### Computational Geometry | 3D Rendering | Web Frontend
 <br>
 
-A no-dependency 3D engine for delivering interactive 3d experiences on the web. Think barebones three.js, but with a focus on parametric design / procedural generation.
+Geon is a 3D engine which can create and visualize various geometries in a web browser. It is a culmination of various scripts and algorithms learned during the Master of Geomatics. Besides tools to build it, it contains no dependencies, which makes it very fast to load. 
 
 <br>
 

@@ -31,6 +31,13 @@ parametric, digital configurations. This created several small sample projects, 
 It was a great experience to work together with the some of the faculty's experts on computational design.
 They were very welcoming, I learned a great deal from them, and we had a lot of fun!
 
+> [1]: <http://toi.bk.tudelft.nl/?p=bk3ov3> "Go to bk3ov3"
+> [2]: <https://www.grasshopper3d.com/> "Grasshopper"
+> [3]: <"http://josfeenstra.nl/#Sfered"> "Sfered"
+> [4]: <"http://josfeenstra.nl/#MinorProgramming"> "Minor programming"
+> [5]: <https://github.com/josfeenstra/gh-student-samples> "gh-student-samples"
+
+
 <br>
 
 ![Something] (portfolio/ov3/thumb.png)

@@ -36,6 +36,7 @@ export class Home extends View
         dom.add("h1", "display-1", "Jos Feenstra");
         let Enthusiastt = "";
         dom.add("h2", "display-6", "Master Student Geomatics | Developer | Enthusiast");
+        // architect of all things digital
         dom.add("p", "lead my-4", "Welcome to my portfolio, feel free to look around");
         dom.addAndTo("div", "");
         App.RenderMainLinks(dom.pointer as HTMLElement);

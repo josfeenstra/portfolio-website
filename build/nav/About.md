@@ -3,9 +3,9 @@
 
 My name is Jos Feenstra, second year Msc Geomatics Student at the TU Delft.
 
-I enjoy tackling problems which necessitate a wholistic approach. I have discovered that I can mean a lot in situations where both the mindset of a programmer & designer are needed within one skull. I get my strength from fascination in abstract and unorthodox ideas, mixing them, experimenting with them, and then turning those vague concepts into concrete, tangible products which really mean something. This mixing of ideas has lead me to do things like using geomatics-related algorithms in order to create [art][7], using game-engines to build [geomatics][5] applications, and using AI to help me design [posters][6]. 
+For as long as I can remember, I have been deeply fascinated by three things: creativity, geometry, and automation. Naturally, I try to fill my life with all three of those things. This has led me to hold a bachelors degree in Architecture, to pursuit a masters degree in Geomatics, and to build 3D engines, websites, games, and a whole range of other things. If I am not behind a computer screen, I enjoy cycling, origami, and making music at the Student Jazz Association Groover. 
 
-I would love to get in contact via one of the channels below. Looking forward hearing from you!  
+I enjoy tackling problems which necessitate a wholistic approach. I have discovered that I can mean a lot in situations where both the mindset of a programmer & designer are needed within one skull. If you have one of these problems lying around, or if you would just like to grab a cup of coffee, please do not hesitate to get in contact with me via one of the channels below. Looking forward hearing from you!  
 
 [1]: <#architecture> "link to architecture"
 [2]: <#minor> "link to minor"

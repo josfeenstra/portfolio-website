@@ -4,7 +4,9 @@
 ### Master | Geodesy | TU Delft
 <br>
 
-While this master track is located within the faculty of architecture at the TU-Delft, 
+Geomatics is the Master degree I am pursuing at the moment. 
+
+While this education is located within the faculty of architecture at the TU-Delft, 
 That is about all the connection it has to my bachelor of [Architecture][1]. 
 The field of Geomatics / GIS / Geodesy was completely new to me when I started out as a first year student, 
 and while I had previously touched QGIS, I by no means claimed to be any good at it. 
