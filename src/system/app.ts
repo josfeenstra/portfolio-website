@@ -98,6 +98,10 @@ export class App {
 
     //#region Routing
 
+    /**
+     * Set up the router
+     * @param currentHash 
+     */
     static setup(currentHash: string) {
         console.log("setting up router...");
         // console.log(currentHash);
@@ -108,18 +112,34 @@ export class App {
 
         // setup browser functionalities for single page app
         onpopstate = function(event) { 
-            // console.log("triggereded!");
+            // console.log("ROUTING!");
             App.tryGo(location.hash); 
         }
         
         // reroute internal href links to fake hash links
         document.body.addEventListener("click", e => {
-            // console.log("trigger!");
+
+            // collapse the navbar when the user clicks anywhere at all
+            if (e.target) {
+                let item = e.target as HTMLElement;
+
+                let toggler = document.querySelector(".navbar-toggler");
+                if (toggler && toggler.getAttribute("aria-expanded") === "true") {
+                    console.log("and the thing is expanded");
+                    
+                    // @ts-ignore
+                    toggler.click();
+                }
+            }
+
             const target = e.target as HTMLLinkElement;
             if (target.matches("[data-link]")) {
-                //e.preventDefault();
-                //Router.Go(new URL(target.href));
+                // I once thought this was needed on some devices, but it seems to work without it
+                // e.preventDefault();
+                // Router.Go(new URL(target.href));
+                // App.tryGo(currentHash);
             }
+            
         }) 
 
         // setup the environment for popState.
@@ -147,7 +167,7 @@ export class App {
             console.log("found a match!: " + match.route.name);
             App.route = match.route;
         }
-        history.pushState(hash, document.title, hash);    
+        // history.pushState(hash, document.title, hash);    
         App.render(); 
     }
 
@@ -192,7 +212,8 @@ export class App {
             {
                 items.push(`
                 <li class="nav-item">
-                    <a class="nav-link" href="${route.hash}">${route.name}</a>
+                    <a class="nav-link" 
+                        href="${route.hash}">${route.name}</a>
                 </li>
                 `)
             });  
@@ -252,7 +273,7 @@ export class App {
     }
 
     static RenderSocials(context: Element) {
-        let footers = Dom.AddDiv(context, "footer-links mt-3");
+        let footers = Dom.AddDiv(context, "col footer-links mt-3");
 
         footers.innerHTML = `
         <a href="mailto:me@josfeenstra.nl" type="button" class="btn btn-outline-secondary">

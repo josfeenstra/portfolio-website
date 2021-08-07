@@ -68,7 +68,7 @@ export class View
 
         // spacing
         let columns = Dom.AddDiv(article, "row mt-5 justify-content-center");
-        let col1 = Dom.AddDiv(columns, "col-md-6 my-5");
+        let col1 = Dom.AddDiv(columns, "col-lg-6 my-5");
 
         // make sure non-portfolio items are spaced differently
         if (this.route.type != RouteType.portfolio) {
@@ -79,8 +79,11 @@ export class View
         let mdwrapper = Dom.AddDiv(col1, "mb-5");
         mdwrapper.innerHTML = html;
 
+        col1.querySelectorAll("h1").forEach(h1 => {
+            h1.classList.add("display-1");
+        })
+
         // turn links in `blockquote` blocks into wide buttons.
-        console.log(html);
         col1.querySelectorAll("blockquote").forEach(block => {
             block.querySelectorAll("a").forEach(a => {
 

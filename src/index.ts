@@ -73,7 +73,6 @@ const ENTRIES : string[] =
 document.addEventListener("DOMContentLoaded", () => 
 {
     ROUTES.push(...LoadPortfolioItems(ENTRIES, "_text.md", "thumb.png"));
-    console.log(ROUTES);
     App.Init(ROUTES, location.hash);
 
     document.getElementById("canvas")?.setAttribute("data-sub-count", "1");

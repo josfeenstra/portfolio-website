@@ -28,14 +28,15 @@ export class Work extends View
 
         App.getRoutes(RouteType.portfolio).forEach(item => 
         {
-            let div = dom.to(grid).add("div", "col-11 col-md-5 col-lg-3 btn btn-outline-light m-2");
-            dom.to(div).addAndTo("div", "container my-5 ");
+            let a = dom.to(grid).add("a", "col-11 col-md-5 col-lg-3 btn btn-outline-light m-2") as HTMLLinkElement;
+            a.href = item.hash;
+            dom.to(a).addAndTo("div", "container my-5 ");
             dom.add("p", "text-light", item.category!);
             dom.add("h2", "text-light", item.name!);
             dom.add("p", "text-light mt-3", item.year!);
             
             // div.style.backgroundImage = "url("+ item.thumb! + ")";
-            this.addListeners(div, item.hash);
+            // this.addListeners(a, item.hash);
         });
 
         // builds samples
@@ -49,6 +50,13 @@ export class Work extends View
 
     addListeners(item : HTMLElement, hash:string)
     {
+        item.onmouseenter = () => {
+            item.style.transform = 'scale(1.10)';
+        }
+        item.onmouseleave = () => {
+
+        }
+
         item.onmousedown = function() {
             // item.style.transform = 'scale(1.00)';
         }
