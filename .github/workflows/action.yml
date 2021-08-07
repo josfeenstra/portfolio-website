@@ -28,7 +28,7 @@ jobs:
       - name: ssh pipelines
         uses: cross-the-world/ssh-pipeline@master
         env:
-          WELCOME: "Hi! I will try to copy-paste & override some files. thank you, ssh pipeline!"
+          WELCOME: "ssh pipeline"
         with:
           host: ${{ secrets.DC_HOST }}
           user: ${{ secrets.DC_USER }}
