@@ -12,43 +12,58 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Run a one-line script
+#         run: echo Hello, world!
+#       - name: Run a multi-line script
+#         run: |
+#           echo Add other actions to build,
+#           echo test, and deploy your project.
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-      # the ssh pipeline to automatically deploy
-      - name: ssh pipelines
-        uses: cross-the-world/ssh-pipeline@master
-        env:
-          WELCOME: "ssh pipeline"
-        with:
-          host: ${{ secrets.DC_HOST }}
-          user: ${{ secrets.DC_USER }}
-          pass: ${{ secrets.DC_PASS }}
-          port: ${{ secrets.DC_PORT }}
-          connect_timeout: 10s
-          script: |
-            echo "(rm -rf /home/github/test || true)"
-            ls -la  
-            echo $WELCOME 
-            mkdir -p /home/github/test/test1 && 
-            mkdir -p /home/github/test/test2 &&
+#       # the ssh pipeline to automatically deploy
+#       - name: ssh pipelines
+#         uses: cross-the-world/ssh-pipeline@master
+#         env:
+#           WELCOME: "Hi! I will try to copy-paste & override some files. thank you, ssh pipeline!"
+#         with:
+#           host: ${{ secrets.DC_HOST }}
+#           user: ${{ secrets.DC_USER }}
+#           pass: ${{ secrets.DC_PASS }}
+#           port: ${{ secrets.DC_PORT }}
+#           connect_timeout: 30s
+#           script: |
+#             ls -la  
+#             echo $WELCOME 
+#             mkdir -p /
 
 # tryout 3
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    name: Build ⛏ & Deploy 🚀
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn
+      
+      # skip building for now
+      # - name: Build
+      #   run: yarn build
+
+      - name: deploy file to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: 'root'
+          server: 'admin@josfeenstra.nl@ssh.strato.com'
+          ssh_private_key: ${{ secrets.DC_PASS }}
+          local_path: './build/*'
+          remote_path: '/var/www/tryout'
+          args: '-o ConnectTimeout=5'
