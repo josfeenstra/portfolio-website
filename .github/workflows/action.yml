@@ -11,7 +11,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,8 +36,8 @@ jobs:
           port: ${{ secrets.DC_PORT }}
           connect_timeout: 30s
           script: |
-            ls -la  
             echo $WELCOME 
+            ls -la  
             mkdir test/
 
 # tryout 3
