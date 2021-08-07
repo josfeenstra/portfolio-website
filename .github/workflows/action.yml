@@ -33,4 +33,22 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      # the ssh pipeline to automatically deploy
+      - name: ssh pipelines
+        uses: cross-the-world/ssh-pipeline@master
+        env:
+          WELCOME: "ssh pipeline"
+        with:
+          host: ${{ secrets.DC_HOST }}
+          user: ${{ secrets.DC_USER }}
+          pass: ${{ secrets.DC_PASS }}
+          port: ${{ secrets.DC_PORT }}
+          connect_timeout: 10s
+          script: |
+            echo "(rm -rf /home/github/test || true)"
+            ls -la  
+            echo $WELCOME 
+            mkdir -p /home/github/test/test1 && 
+            mkdir -p /home/github/test/test2 &&
+
 # tryout 1
