@@ -88,14 +88,17 @@ export class View
             block.querySelectorAll("a").forEach(a => {
 
                 // set an icon
+                // console.log(document.location);
                 let icon = "";
                 if (a.href.includes("github")) {
                     icon = "github";
-                } else if (a.href.includes("http")) {
+                } else if (a.href.includes(document.location.origin)) {
+                    icon = "caret-right-fill"
+                } else {
                     icon = "globe";
-                }
-                a.innerHTML = `<i class="bi bi-${icon}"></i> ` + a.innerHTML
-                a?.classList.add("btn","btn-outline-light","btn-block")
+                } 
+                a.innerHTML = `<i class="bi bi-${icon}"></i> ` + a.innerHTML;
+                a?.classList.add("btn","btn-outline-light","btn-block", "m-2");
             });
         });
 
