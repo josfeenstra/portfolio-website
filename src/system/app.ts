@@ -3,6 +3,7 @@
 import { Route, RouteType } from "./app-helpers";
 import CD from "../utils/constant-data";
 import { dom, Dom, DomWriter } from "./dom";
+import { ImageView } from "../Views/image";
 // import Canvas from "../canvas/canvas";
 
 // TODO split away the router itself
@@ -148,6 +149,17 @@ export class App {
 
     static async tryGo(hash : string) {
         // console.log("setting route to hash:", hash)
+
+        if (hash.includes("#--img--")) {
+            console.log("image");
+            App.route = {
+                name: "image",
+                type: 3,
+                hash: hash,
+                view: ImageView
+            };
+        }
+
         const potentialMatches = App.routes.map(route => {
             return {
                 route: route,
@@ -159,8 +171,7 @@ export class App {
         
         if (!match)
         {
-            console.log(`hash "${hash}" was invalid! going to main menu...`)
-            //App.route = App.routeDefault;
+            console.log(`hash "${hash}" was invalid!`)
         }
         else 
         {

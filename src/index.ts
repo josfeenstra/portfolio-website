@@ -29,9 +29,10 @@ const ROUTES : Route[] =
     },
     { 
         type: 1,
-        name: "Demo", 
-        hash: "https://josfeenstra.nl/demo/geon", 
+        name: "Highlight", 
+        hash: "#geon", 
         view: View,
+        page: "portfolio/geon/_text.md"
     },
 
     { 

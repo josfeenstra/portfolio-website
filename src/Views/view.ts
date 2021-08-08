@@ -61,7 +61,8 @@ export class View
         let article = Dom.AddDiv(context, "container mt-5");
 
         // create an arrow back to the `works` menu, if this is a portfolio item
-        if (this.route.type == RouteType.portfolio) {
+        // console.log(this.route.name)
+        if (this.route.type == RouteType.portfolio || this.route.name == "Highlight") {
             let div = Dom.AddDiv(article, "row mb-4 justify-content-center m-0");
             let btn = Dom.AddLink(div, "#works", `<i class="bi bi-caret-up-fill"></i>`, "btn btn-block btn-outline-light col-2")
         }
@@ -71,7 +72,7 @@ export class View
         let col1 = Dom.AddDiv(columns, "col-lg-6 my-5");
 
         // make sure non-portfolio items are spaced differently
-        if (this.route.type != RouteType.portfolio) {
+        if (this.route.type != RouteType.portfolio && this.route.name != "Highlight") {
             columns.classList.replace("justify-content-center", "justify-content-end")
         }
 
@@ -104,11 +105,24 @@ export class View
 
         // put all images at the bottom of the page
         let imageWrapper = Dom.AddDiv(col1, "mt-5");
-
+  
         col1.querySelectorAll("img").forEach(img => {
+            // make the image scale nicely
             img.className = "img-fluid mb-2";
-            imageWrapper.appendChild(img);
+
+            // make it click & zoomable
+            let a = Dom.AddLink(imageWrapper, img.src, "", "");
+            // a.addEventListener("click", (e) => {
+            //     e.preventDefault();
+            //     // img.style.width = "200%";
+            //     img.style.transform = `scale(2)`;
+            //     img.tabIndex = -4;
+            // }) 
+
+            a.appendChild(img);
+            imageWrapper.appendChild(a);
         });
+
 
     }
 

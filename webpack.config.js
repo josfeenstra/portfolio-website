@@ -2,7 +2,7 @@ const path = require('path');
 
 // setup webpack using the ts-loader
 module.exports = {
-    devtool: "eval-source-map", // just source-map is slower, but nicer
+    // devtool: "eval-source-map", // just source-map is slower, but nicer
     entry: "./src/index.ts", 
     module: {
         // rules for the linker
@@ -15,7 +15,7 @@ module.exports = {
         ]
     },
     resolve : {
-        extensions: ['.ts', '.js', '.tsx']
+        extensions: ['.ts', '.js']
     },
     output: {
         filename: 'app.js',
