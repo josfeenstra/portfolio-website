@@ -12,6 +12,6 @@ We got to present our results during the NCG2020 Conference.
 
 <br>
 
-![Photo1] (portfolio/synthesis/thumb.png "Room in CGI") 
-![Photo2] (portfolio/synthesis/time.png "Room in CGI, visualized per age of mesh")
-![Photo3] (portfolio/synthesis/cover2.png "Scan of the TU-Delft Library")
+![Photo1](portfolio/synthesis/thumb.png "Room in CGI") 
+![Photo2](portfolio/synthesis/time.png "Room in CGI, visualized per age of mesh")
+![Photo3](portfolio/synthesis/cover2.png "Scan of the TU-Delft Library")
