@@ -30,9 +30,8 @@ const ROUTES : Route[] =
     { 
         type: 1,
         name: "Highlight", 
-        hash: "#geon", 
+        hash: "https://josfeenstra.nl/#island", 
         view: View,
-        page: "portfolio/geon/_text.md"
     },
 
     { 
@@ -49,7 +48,7 @@ const ENTRIES : string[] =
     "Island | 2022 | Hobby",
     "Geofront | 2022 | Study",
     "Geon | 2020-now | Study",
-    "Sfered | 2018-2021 | Job",
+    "Sfered | 2018-now | Job",
     "Website | 2020-now | Hobby",
     "Bamimoth | 2019-now | Hobby",
     "OV3 | 2019-2020 | Job",

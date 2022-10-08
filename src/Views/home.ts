@@ -34,10 +34,8 @@ export class Home extends View
         dom.set("style", "height: 90vh;")
         dom.addAndTo("div", "col-lg-6 text-center mt-5 align-middle")
         dom.add("h1", "display-1", "Jos Feenstra");
-        let Enthusiastt = "";
-        dom.add("h2", "display-6", "Software Engineer");
-        // architect of all things digital
-        dom.add("p", "lead my-4", "Welcome, feel free to look around");
+        dom.add("h2", "display-6", "Creative software engineer");
+        dom.add("p", "lead my-4", "Welcome, feel free to look around!");
         dom.addAndTo("div", "");
         App.RenderMainLinks(dom.pointer as HTMLElement);
         App.RenderSocials(dom.pointer as HTMLElement);

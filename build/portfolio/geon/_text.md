@@ -14,7 +14,7 @@ Geon was my pride an joy during the pandemic, my beacon of hope :). It gave the 
 
 <br>
 
-> [Live Demo](http://josfeenstra.nl/project/geon/)
+> [Live Demo](http://josfeenstra.nl/project/geon/#perlin)
 > [Engine Repo](https://github.com/josfeenstra/geon-engine/)
 > [Demo Repo](https://github.com/josfeenstra/geon-demo/)
 
