@@ -9,6 +9,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack --mode=production",
+    "beun-deploy": "cp -r ./build/* ../website",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
