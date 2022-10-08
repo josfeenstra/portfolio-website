@@ -45,24 +45,18 @@ const ROUTES : Route[] =
 
 const ENTRIES : string[] = 
 [
+    "Island | 2022 | Hobby",
+    "Geofront | 2022 | Study",
     "Geon | 2020-now | Study",
     "Sfered | 2018-now | Job",
     "Website | 2020-now | Hobby",
     "Bamimoth | 2019-now | Hobby",
-    "Thesis | 2021-now | Study",
-
-
     "OV3 | 2019-2020 | Job",
-    
-    
     "Comboom | 2021 | Volunteering",
     "Synthesis | 2020 | Study",
     "Geomatics | 2019 | Study",
-    "Minor | 2017-2018 | Study",
-    
+    "Minor | 2017-2018 | Study", 
     "Architecture | 2015-2018 | Study",
-    
-    
     "Groover | 2016-2021 | Volunteering",
     "Chess | 2020 | Hobby",
     "Gazelle | 2018-2020 | Job",
