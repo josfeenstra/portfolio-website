@@ -10,3 +10,4 @@ An experiment to visualize all musical relations within the student society D.S.
 
 > [Live Demo](https://josfeenstra.nl/project/comboom/)
 > [Repo](https://github.com/josfeenstra/comboom)
+> [More about Groover](#groover)

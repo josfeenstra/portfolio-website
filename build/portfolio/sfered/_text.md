@@ -17,11 +17,11 @@ During my three years as developer and parametric modeller at Sfered, I have cre
 
 <br>
 
+> [to Sfered](http://sfered.nl/)
+> [More about Gazelle](#gazelle)
+
 ![Image1] (portfolio/sfered/thumb.png)
 ![Image2] (portfolio/sfered/voronoi.png)
 ![Image3] (portfolio/sfered/hinge-design.gif)
 
-
-[1]: <http://sfered.nl/> "Go to Sfered."
-[2]: <http://josfeenstra.nl/#gazelle> "Go to Gazelle"
 

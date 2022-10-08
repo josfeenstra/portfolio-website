@@ -25,4 +25,5 @@ and other artworks as part of the Illustration Commission. Right now I work as p
 
 <br>
 
-[1]: <http://grooverjazz.nl>
+> [To Groover](http://grooverjazz.nl)
+> [More about a coding project I did for groover](#comboom)
